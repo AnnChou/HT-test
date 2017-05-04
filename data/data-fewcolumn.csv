@@ -1,0 +1,240 @@
+id,distance_km,mode,appel_date,out_of_hospital_time_minute,iot,multiple,ecg_smur,diagnostic_smur,transport_nimes,service_receveur,service_secondaire,service_reanimation,service_intensif,numero_hospitalisation,dextro_service,ecg_service,Outcome_24h,Outcome_7Day,Outcome_28Day,diagnostic_service,duree_sejour
+1,76.3, H,1/2/2014,127,1,1,ST +,SCA ST+,0,Cororographie,USIC,1,0,313439836,1.76,ST+,Hospitalise,Discharged from Hospital,Discharged from Hospital,SCA ST+,7
+2,40.9, H,1/11/2014,70,1,1,ST +,SCA ST+,0,Cororographie,USIC,1,0,313561771,1.12,ST+,Hospitalise,Hospitalise,Discharged from Hospital,SCA ST+,12
+3,85.1, H,1/12/2014,103,1,1,Normal,AVC,0,SAUV,USINV,1,0,313568802,1.58,Normal,Hospitalise,Decreased,Decreased,AVC I,5
+4,57.9, H,1/14/2014,90,1,1,ST +,SCA ST+,0,Cororographie,USIC,1,0,313605607,0.99,ST+,Hospitalise,Hospitalise,Discharged from Hospital,SCA ST+,9
+5,50.4, H,1/20/2014,88,1,1,ST +,SCA ST+,0,Cororographie,USIC,1,0,313680056,0.89,ST+,Hospitalise,Hospitalise,Discharged from Hospital,SCA ST+,14
+6,78.3, H,1/23/2014,97,1,1,Normal,AVC,0,SAUV,USINV,1,0,313737630,0.95,Normal,Hospitalise,Hospitalise,Discharged from Hospital,AVC I,21
+7,74, H,1/24/2014,86,1,1,ST +,SCA ST+,0,Cororographie,USIC,1,0,313746937,0.99,ST+,Hospitalise,Hospitalise,Discharged from Hospital,SCA ST+,12
+8,77, H,1/25/2014,152,1,1,Normal,Polytraumatise,0,SAUV,orthopedie,0,0,313757445,,Normal,Hospitalise,Hospitalise,Discharged from Hospital,Polytraumatise,17
+9,69, H,1/16/2014,141,1,1,ST +,SCA ST+,0,Cororographie,USIC,1,0,313643661,0.94,ST+,Hospitalise,Discharged from Hospital,Discharged from Hospital,SCA ST+,7
+10,62, H,2/22/2014,139,0,1,Normal,Polytraumatise,0,Reanimation,SSR,0,1,314116210,1.13,Normal,Hospitalise,Hospitalise,Hospitalise,Polytraumatise,33
+11,57, H,2/2/2014,115,1,1,Normal,Polytraumatise,0,SAUV,RAD,1,1,313850429,1.56,Normal,Discharged from Hospital,Discharged from Hospital,Discharged from Hospital,entorse rachis cervical,1
+12,72, H,2/2/2014,108,0,1,Normal,AVC,0,SAUV,USINV,1,0,313850939,3.75,Normal,Hospitalise,Hospitalise,Discharged from Hospital,AVC I,10
+13,72, H,2/3/2014,99,1,1,Normal,AVC,0,SAU medico chir,USINV,0,0,313855739,1,FA,Hospitalise,Discharged from Hospital,Discharged from Hospital,AVC I,5
+14,68, H,2/5/2014,67,1,1,Normal,AVC,0,SAUV,UMCH,0,1,313904867,2.2,Normal,Hospitalise,Discharged from Hospital,Discharged from Hospital,Epilepsie,5
+15,38, H,2/11/2014,84,1,1,ST +,SCA ST+,0,Cororographie,Medecine. cardiologie HC,1,1,313967914,1.74,ST+,Hospitalise,Discharged from Hospital,Discharged from Hospital,SCA ST+,6
+16,132, H,2/11/2014,152,1,1,ST +,SCA ST+,1,USIC,USIC ADV puis Cardio A ADV,1,1,314521808,1,Trouble de la repolarisation non ST+,Hospitalise,Discharged from Hospital,Discharged from Hospital,SCA non ST+,2
+17,38, H,2/12/2014,63,1,1,ST +,SCA ST+,0,Cororographie,cardiologie HC,1,1,313984640,1.24,ST+,Hospitalise,Discharged from Hospital,SSR,SCA ST+,5
+18,43, H,2/16/2014,127,1,0,Normal,Contusions,0,SAUV,Non,1,1,314029997,1.05,Normal,Discharged from Hospital,Discharged from Hospital,Discharged from Hospital,lesions secondaires,1
+19,72, H,2/17/2014,103,1,1,trouble de repolarisation non ST+,SCA non ST+,1,Franciscaines POSU,Non,1,1,314495209,1.05,Trouble de la repolarisation non ST+,Hospitalise,Discharged from Hospital,Discharged from Hospital,DT non cororienne,1
+20,48, H,2/27/2014,104,1,1,ST +,SCA ST+,1,USIC,USIC,1,0,314189701,0.86,Trouble de la repolarisation non ST+,Hospitalise,Discharged from Hospital,SSR,SCA non ST+,3
+21,88, H,3/12/2014,80,1,1,Normal,AVC,1,UTEC,Non,1,0,314828957,0.98,BBG incomplet,Hospitalise,Hospitalise,SSR,AVC H,13
+22,88, H,3/12/2014,153,1,1,Normal,AVC,0,SAUV,USINV,1,0,314327022,1.57,Normal,Hospitalise,Discharged from Hospital,sortie hospitalisation,AVC I,2
+23,43, H,3/15/2014,152,0,1,Normal,Polytraumatise,1,Reanimation Chirurgicale,UMCH,0,1,314353951,1.8,Normal,Hospitalise,Hospitalise,Hospitalise,HSD aigue ,32
+24,45, H,3/15/2014,188,1,0,Normal,Polytraumatise,1,DAR,Chirurgie orthopedique Lapeyronie,0,1,314769971,1.22,Normal,Hospitalise,Hospitalise,Discharged from Hospital,Polytraumatise,7
+25,73, H,3/18/2014,83,0,1,REE,AVC,0,SAUV,GDC (thrombectomie) puis retour nimes neuro HC puis reeduque Ales,1,0,314391939,1.26,Normal,Hospitalise,Hospitalise,reeducation,AVC I,11
+28,46, H,3/23/2014,115,0,1,Normal,Polytraumatise,0,Reanimation Chirurgicale,Non,0,1,314444220,,Normal,Decreased,Decreased,Decreased,HSA Aigue ,1
+29,102, H,3/24/2014,114,1,1,Normal,Polytraumatise,1,SAU CH Ales,SAUV,1,1,314832310,1.17,Normal,Hospitalise,Hospitalise,Discharged from Hospital,Hematome rate ,8
+30,24, H,3/24/2014,59,1,1,Normal,Polytraumatise,0,SAUV,RAD,1,1,314461580,,Normal,Discharged from Hospital,Discharged from Hospital,Discharged from Hospital,Contusions,1
+31,24, H,3/31/2014,136,0,1,Normal,Polytraumatise,1,DAR,Non,0,1,314814646,1.3,Normal,Hospitalise,Decreased,Decreased,Polytraumatise,1
+32,48, H,4/27/2014,92,1,1,abs,Polytraumatise,0,SAUV,orthopedie,1,1,314856329,0.95,,Hospitalise,Discharged from Hospital,Discharged from Hospital,Polyfracture,6
+33,39, H,4/27/2014,266,0,1,abs,Polytraumatise,1,DAR,SSR,0,1,315162085,1.05,Normal,Hospitalise,Hospitalise,Hospitalise,Polytraumatise,62
+34,45, H,4/24/2014,125,0,1,abs,Polytraumatise,0,Reanimation Chirurgicale,UMCH,1,0,314836638,1.05,Normal,Hospitalise,Hospitalise,Hospitalise,Polytraumatise,48
+35,52, H,4/24/2014,78,1,1,ST +,SCA ST+,0,USIC,cardiologie HC,1,0,314836853,0.97,Ondes Q,Hospitalise,Hospitalise,Discharged from Hospital,SCA non ST+,8
+36,117, H,4/24/2014,85,1,1,Normal,AVC,0,USINV,neurologie HC,0,1,314834155,1.41,ACFA,Hospitalise,Hospitalise,Discharged from Hospital,AVC I,8
+37,62, H,4/17/2014,98,1,1,ST +,SCA ST+,0,Cororographie,cardiologie HC,0,0,314761834,1.05,ST+,Hospitalise,Hospitalise,Discharged from Hospital,SCA ST+,6
+38,57, H,4/16/2014,107,0,0,abs,Polytraumatise,0,Reanimation Chirurgicale,chirurgie orthopedique,1,0,314746149,1.43,,Hospitalise,Hospitalise,Discharged from Hospital,Polytraumatise,10
+39,46, H,4/14/2014,161,1,1,ST +,SCA ST+,1,cororographie milleire,,,,315150246,,,,,,,
+40,39, H,4/8/2014,111,1,1,Normal,Polytraumatise,0,SAUV,chirurgie orthopedique,1,1,314645811,1.1,Normal,Hospitalise,Hospitalise,Discharged from Hospital,Polytraumatise,21
+41,24, H,4/7/2014,35,1,1,Normal,Polytraumatise,0,SAUV,chirurgie orthopedique,1,1,314628109,0.9,Normal,Hospitalise,inconnue rapatriement allemagne a J4,inconnue rapatriement allemagne a J4,Polytraumatise,
+42,101, H,4/3/2014,152,1,1,Normal,Polytraumatise,0,SAUV,chirurgie orthopedique,1,1,314586847,1,Normal,Hospitalise,Discharged from Hospital,Discharged from Hospital,Polytraumatise,6
+43,58, H,4/1/2014,154,0,0,Normal,Polytraumatise,1,DAR,SC orthopedie Lapeyronie puis SSR,0,1,314990627,1.53,tachycardie sinusale,Hospitalise,Hospitalise,Hospitalise,Polytraumatise,51
+44,46, H,4/1/2014,104,1,1,Normal,Polytraumatise,0,SAUV,UMCH,1,1,314562408,1.27,Normal,Hospitalise,Hospitalise,Discharged from Hospital,Polytraumatise,10
+45,60, H,5/10/2014,131,1,1,ST +,SCA ST+,1,Franciscaines POSU,Non,1,0,315390320,1.27,ST+,Hospitalise,Hospitalise,Discharged from Hospital,SCA ST+,9
+46,126, H,5/11/2014,96,1,1,Normal,AVC,0,SAUV,Medecine,1,1,314977141,0.85,Normal,Hospitalise,Hospitalise,Hospitalise,AVC I,33
+47,38, H,5/12/2014,93,1,1,Normal,Polytraumatise,0,SAUV,rea chir puis neuro chirurgie,0,1,314994526,1.05,Normal,Hospitalise,Hospitalise,Hospitalise,Polytraumatise,31
+48,27, H,5/18/2014,189,1,1,Normal,Polytraumatise,1,DAR,Non,0,1,315416751,2.54,Normal,Hospitalise,Hospitalise,Decreased,Polytraumatise,18
+49,61, H,5/19/2014,97,1,1,ST +,SCA ST+,0,Cororographie,Medecine,0,0,315078943,1.51,ST+,Hospitalise,Discharged from Hospital,Discharged from Hospital,SCA ST+,3
+50,57, H,5/29/2014,85,1,1,Normal,AVC,0,SAUV ,USINV,1,0,315197931,1.24,Normal,Hospitalise,Discharged from Hospital,Discharged from Hospital,AVC I,6
+51,45, H,5/31/2014,152,1,1,ST +,SCA ST+,0,Cororographie,Medecine,1,1,315208889,0.97,ST+,Hospitalise,Discharged from Hospital,Discharged from Hospital,SCA ST+,4
+52,74, H,6/1/2014,114,1,1,Normal,Polytraumatise,0,Reanimation Chirurgicale,Soins intensifs ou continus,0,0,315211056,1.1,Normal,Hospitalise,Hospitalise,Hospitalise,Polytraumatise,30
+53,41, H,6/1/2014,57,0,1,ST +,SCA ST+,1,funerarium,Non,1,1,315661642,,,Decreased,Decreased,Decreased,,0
+54,56, H,6/4/2014,81,1,1,Normal,Polytraumatise,0,SAUV,chirurgie orthopedique,1,1,315254490,0.97,Normal,Hospitalise,Discharged from Hospital,Discharged from Hospital,Polytraumatise,2
+55,108, H,6/6/2014,122,1,1,Normal,AVC,0,SAUV,Medecine,1,1,315288833,1.02,Normal,Hospitalise,Hospitalise,Hospitalise,AVC I,34
+56,58, H,6/13/2014,103,0,1,Normal,Polytraumatise,0,Reanimation Chirurgicale,crebrolese,0,1,315357845,1.26,Normal,Hospitalise,Hospitalise,Hospitalise,Polytraumatise,61
+57,24, H,6/14/2014,78,0,1,Normal,Polytraumatise,0,Reanimation Chirurgicale,UMCH,0,1,315362175,0.87,Normal,Hospitalise,Hospitalise,rapprochement familial aix les bains en USC Dr Monnet 0609807373,Polytraumatise,35
+58,42, H,6/18/2014,170,1,0,Normal,Polytraumatise,0,Reanimation Chirurgicale,chirurgie orthopedique,0,1,315407943,1.58,Normal,Hospitalise,Hospitalise,reeducation,Polytraumatise,9
+59,68, H,6/20/2014,85,1,1,ST +,SCA ST+,0,Cororographie,Medecine,1,1,315436170,1.58,ST+,Hospitalise,Discharged from Hospital,Discharged from Hospital,SCA ST+,3
+60,46, H,6/21/2014,90,0,1,asystolie,Polytraumatise,1,funerarium,Non,1,1,315765568,,,Decreased,Decreased,Decreased,,0
+62,62, H,6/24/2014,113,1,1,ST +,SCA ST+,0,Cororographie,Soins intensifs ou continus,1,0,315470768,3.11,ST+,Hospitalise,transferee hopital d Ales. duree totale hospitalisation ?,transferee hopital d Ales. duree totale hospitalisation ?,SCA ST+,6
+63,58, H,6/25/2014,153,0,0,Normal,Polytraumatise,0,SAUV,Reanimation,0,1,315495350,1.38,Normal,Hospitalise,Hospitalise,Discharged from Hospital,Polytraumatise,23
+64,89, H,6/30/2014,102,1,1,ST +,SCA ST+,0,Cororographie,Soins intensifs ou continus,1,0,315545415,2.5,ST+,Hospitalise,Discharged from Hospital,reeducation CV,SCA ST+,3
+65,31, H,7/5/2014,72,1,1,Normal,Polytraumatise,0,SAUV,chirurgie ORL,1,1,315609008,1.05,Normal,Hospitalise,Discharged from Hospital,Discharged from Hospital,Polytraumatise,3
+66,48, H,7/14/2014,107,1,1,ST +,SCA ST+,0,Cororographie,Medecine,1,1,315691723,1.2,ST+,Hospitalise,rapatriement J5 vers Besancon. duree totale hospitalisation ?,rapatriement J5 vers Besancon. duree totale hospitalisation ?,SCA ST+,
+67,62, H,7/27/2014,90,1,1,ST +,SCA ST+,0,Cororographie,Soins intensifs ou continus,1,0,315823212,1.24,ST+,Hospitalise,Discharged from Hospital,reeducation CV,SCA ST+,4
+68,93, H,7/29/2014,99,1,1,ST +,SCA ST+,0,Cororographie,Medecine,1,1,315839959,1.24,ST+,Hospitalise,Hospitalise,Discharged from Hospital,SCA ST+,11
+69,62, H,8/2/2014,110,1,1,ST +,SCA ST+,0,Cororographie,Soins intensifs ou continus,1,0,315882619,1.49,ST+,Hospitalise,Discharged from Hospital,reeducation CV,SCA ST+,3
+70,76, H,8/8/2014,193,0,1,BBD incomplet,AVC,0,SAUV,Reanimation,0,1,315936638,1.64,BBD incomplet,Hospitalise,Discharged from Hospital,Rehospitalise,AVC H,6
+71,76, H,8/13/2014,76,1,1,ST +,SCA ST+,0,Cororographie,Medecine,1,1,315974207,0.98,ST+,Hospitalise,Discharged from Hospital,Discharged from Hospital,pericardite,2
+72,41, H,8/16/2014,118,0,0,Normal,Polytraumatise,0,Reanimation Chirurgicale,UMCH,0,1,315987934,1.53,Normal,Hospitalise,Hospitalise,Hospitalise,Polytraumatise,37
+73,28, H,8/20/2014,98,1,1,Normal,Polytraumatise,0,SAUV,chirurgie orthopedique,1,1,316025363,1.42,Normal,Hospitalise,Hospitalise,Discharged from Hospital,Polytraumatise,12
+74,99, H,8/21/2014,121,1,1,Normal,AVC,0,SAUV,Soins intensifs ou continus,1,0,316032085,1.05,Normal,Hospitalise,Hospitalise,rapatriement St Malo Dr Drouet. duree totale hospitalisation ?,AVC I,
+75,84, H,8/25/2014,107,1,1,Normal,AVC,0,SAUV,ZAH,1,1,316061662,1.04,Normal,Hospitalise,Discharged from Hospital,Discharged from Hospital,PF a frigore,2
+76,58, H,8/28/2014,167,1,0,Normal,Polytraumatise,0,SAUV,Reanimation. SAUV-Rea chir-UMCH-chir ortho,0,1,316096270,1.05,Normal,Hospitalise,Hospitalise,Hospitalise,Polytraumatise,50
+77,56, H,8/30/2014,93,1,1,ST +,SCA ST+,0,Cororographie,Soins intensifs ou continus,1,0,316116527,1.22,ST+,Hospitalise,Decreased,Decreased,SCA ST+,2
+78,87, H,9/4/2014,137,0,1,Normal,Polytraumatise,0,Reanimation Chirurgicale,Non,0,1,316169400,1.86,Normal,Hospitalise,Decreased,Decreased,Polytraumatise,1
+79,52, H,9/4/2014,84,1,1,ST +,SCA ST+,0,Cororographie,Medecine,1,1,316174964,1.31,ST+,Hospitalise,Discharged from Hospital,Discharged from Hospital,SCA ST+,4
+80,50, H,9/7/2014,81,1,1,HBAG,AVC,0,SAUV,Soins intensifs ou continus,1,0,316191920,0.99,HBAG,Hospitalise,Discharged from Hospital,Discharged from Hospital,AVC I,4
+81,85, H,9/19/2014,176,0,1,Normal,AVC,0,SAUV,Reanimation,0,1,316342821,0.79,Normal,Hospitalise,Hospitalise,Decreased,AVC I,10
+83,76, H,9/27/2014,145,0,1,Normal,Polytraumatise,0,Reanimation Chirurgicale,UMCH. Rea chir -UMCH-SSR,0,1,316427298,0.93,Normal,Hospitalise,Hospitalise,Hospitalise,Polytraumatise,62
+84,41, H,10/2/2014,61,1,1,BBD,AVC,0,SAUV,Soins intensifs ou continus,1,0,316493827,1,BBD,Hospitalise,Discharged from Hospital,Discharged from Hospital,AVC I,4
+85,57, H,10/2/2014,63,1,1,Normal,AVC,0,SAUV,Non,1,1,316494116,1.47,Normal,Hospitalise,Decreased,Decreased,AVC H,2
+86,41, H,10/7/2014,139,0,1,Normal,Polytraumatise,1,DAR,Non,0,1,316579570,2.25,tachycardie sinusale,Hospitalise,Decreased,Decreased,Polytraumatise,1
+87,48, H,10/17/2014,65,1,1,Normal,Polytraumatise,0,SAUV,UMCH,1,1,316663600,1.01,Normal,Hospitalise,Discharged from Hospital,Discharged from Hospital,Polytraumatise,2
+88,64, H,10/18/2014,86,1,1,ACFA. onde Q,AVC,0,SAUV,Soins intensifs ou continus,1,0,316667859,1.02,ACFA,Hospitalise,Hospitalise,Decreased,AVC I,17
+89,68, H,10/21/2014,95,1,1,Normal,Polytraumatise,0,SAUV,UMCH,1,1,316689669,1.08,Normal,Hospitalise,Discharged from Hospital,Discharged from Hospital,Polytraumatise,2
+90,24, H,10/29/2014,109,0,1,Normal,Polytraumatise,0,Reanimation Chirurgicale,neurochirurgie,0,1,316776300,1.01,Normal,Hospitalise,Hospitalise,Discharged from Hospital,Polytraumatise,9
+91,46, H,10/30/2014,87,1,1,ST +,SCA ST+,0,Cororographie,Medecine,1,1,316789506,1.29,ST+,Hospitalise,Discharged from Hospital,Discharged from Hospital,SCA ST+,4
+92,50, H,10/30/2014,96,1,1,Normal,Polytraumatise,0,SAUV,Reanimation. rea chir puis UMCH,0,1,316795054,1.94,Normal,Hospitalise,Hospitalise,Discharged from Hospital,Polytraumatise,13
+93,25, H,11/2/2014,68,1,1,Normal,Polytraumatise,0,SAUV,chirurgie orthopedique,1,1,316810760,0.99,Normal,Hospitalise,Hospitalise,Discharged from Hospital,Polytraumatise,10
+94,93, H,11/5/2014,117,1,1,ST +,SCA ST+,0,Cororographie,Soins intensifs ou continus,1,0,316853140,1.68,ST+,Hospitalise,Hospitalise,Rehospitalise,SCA ST+,8
+95,52, H,11/7/2014,235,1,1,Normal,Polytraumatise,0,SAUV,chirurgie orthopedique,1,1,316881112,1.39,Normal,Hospitalise,Hospitalise,Discharged from Hospital,Polytraumatise,7
+96,61, H,11/11/2014,159,0,1,asystolie,ACR sur SCA,0,Cororographie,Non,1,0,316905334,2.99,Trouble de la repolarisation non ST+,Hospitalise,Decreased,Decreased,ACR recupere sur SCA non ST+ trop +,1
+97,70, H,11/12/2014,114,1,1,ST +,SCA ST+,0,Cororographie,Soins intensifs ou continus,1,0,316913809,1.28,ST+,Hospitalise,transfert cardio hopital d Ales,transfert cardio hopital d Ales,SCA ST+,2
+98,38, H,11/23/2014,89,1,1,Normal,Polytraumatise,0,SAUV,Reanimation. puis UMCH,0,1,317034508,1.24,Normal,Hospitalise,Hospitalise,Discharged from Hospital,Polytraumatise,9
+99,46, H,12/2/2014,80,1,1,ST +,SCA ST+,0,Cororographie,Soins intensifs ou continus,1,0,317146487,1.51,ST+,Hospitalise,Hospitalise,Discharged from Hospital,SCA ST+,3
+100,93, H,12/26/2014,164,1,1,Normal,AVC,1,UTEC,mutation CHU Nimes,0,1,317410202,1.19,Normal,Discharged from Hospital,Discharged from Hospital,Discharged from Hospital,AVC H,1
+101,66, H,12/30/2014,142,1,1,Normal,Polytraumatise,0,SAUV,chirurgie orthopedique,1,1,317432894,1.85,Normal,Hospitalise,Hospitalise,Discharged from Hospital,Polytraumatise,8
+102,55, H,1/2/2014,95,1,1,Trouble de la repolarisation non ST+,SCA non ST+,0,USIC,Medecine,1,0,313434355,1.98,Trouble de la repolarisation non ST+,Hospitalise,Discharged from Hospital,Discharged from Hospital,SCA non ST+ tropo+,5
+103,63, H,1/2/2014,84,1,1,Trouble de la repolarisation non ST+,SCA non ST+,0,USIC,Non,1,0,313436601,1.37,Normal,Hospitalise,Discharged from Hospital,Discharged from Hospital,DT non cororienne,1
+104,78, H,2/21/2014,90,1,1,Trouble de la repolarisation non ST+,SCA non ST+,0,USIC,Non,1,0,314108380,0.97,Trouble de la repolarisation non ST+,Hospitalise,Discharged from Hospital,Discharged from Hospital,SCA non ST+ tropo+,2
+105,72, H,3/20/2014,88,1,1,Trouble de la repolarisation non ST+,SCA non ST+,0,SAUV,Medecine,1,1,314427286,1.67,Trouble de la repolarisation non ST+,Hospitalise,Discharged from Hospital,Discharged from Hospital,angor,2
+106,46, H,3/26/2014,75,1,1,Trouble de la repolarisation non ST+,SCA non ST+,0,USIC,Medecine,1,0,314496121,1.04,Trouble de la repolarisation non ST+,Hospitalise,Discharged from Hospital,Discharged from Hospital,SCA non ST+ tropo +,3
+107,48, H,3/27/2014,129,1,1,Normal,SCA non ST+,0,SAUV,Medecine,1,0,314505368,1.19,Normal,Hospitalise,Discharged from Hospital,Discharged from Hospital,SCA non ST+ tropo -,1
+108,83, H,3/30/2014,137,1,1,FA et BBG complet,SCA non ST+,0,USIC,Medecine,1,0,314528818,4.51,ACFA ,Hospitalise,Hospitalise,Discharged from Hospital,SCA non ST+ tropo +,8
+109,78, H,5/4/2014,89,1,1,Normal,SCA non ST+,0,USIC,Non,1,0,314919407,0.9,Normal,Hospitalise,Discharged from Hospital,Discharged from Hospital,SCA non ST+ tropo+,2
+110,88, H,5/27/2014,127,1,1,BBD incomplet,SCA non ST+,0,USIC,Non,1,0,315176374,1.21,BBD incomplet,Hospitalise,Discharged from Hospital,Discharged from Hospital,DT non cororienne ,1
+111,89, H,6/20/2014,100,1,1,ST raide en anterieur,SCA non ST+,0,USIC,Medecine,1,0,315440745,0.41,Trouble de la repolarisation non ST+,Hospitalise,Discharged from Hospital,Discharged from Hospital,SCA non ST+ tropo -,4
+112,110, H,6/22/2014,100,1,1,BBG non connu,SCA non ST+,1,Franciscaines POSU,,,,315758008,,,,,,,
+113,33, H,6/24/2014,49,1,1,Normal,SCA non ST+,1,USIC CH Avig1,,0,1,315757763,,,,,,,
+114,52, H,7/14/2014,98,1,1,Normal,SCA non ST+,0,USIC,Non,1,0,315690946,1.46,BBD incomplet,Hospitalise,Discharged from Hospital,Discharged from Hospital,Poussee HTA,1
+115,76, H,7/21/2014,82,1,1,Trouble de la repolarisation non ST+,SCA non ST+,1,USIC,Non,1,0,315760520,1.34,Normal,Hospitalise,Discharged from Hospital,Discharged from Hospital,malaise vagal,1
+116,74, H,7/31/2014,112,1,1,Normal,SCA non ST+,0,USIC,Medecine,1,0,315862779,2.59,Normal,Hospitalise,Discharged from Hospital,Discharged from Hospital,SCA non ST+ tropo +,3
+116,74, H,7/26/2014,113,1,1,Normal,SCA non ST+,0,USIC,Non,1,0,31588846,0.88,BBD incomplet. T plate en aVL,Hospitalise,Discharged from Hospital,Discharged from Hospital,SCA non ST+ tropo+,3
+117,77, H,8/18/2014,125,1,1,Trouble de la repolarisation non ST+,SCA non ST+,0,USIC,Medecine,1,0,316002583,1.31,Trouble de la repolarisation non ST+,Hospitalise,Hospitalise,SSR,SCA non ST+ tropo+,7
+118,52, H,8/8/2014,70,1,1,ACFA,SCA non ST+,0,SAU,Non,1,1,316195250,1.21,ACFA ,Hospitalise,Discharged from Hospital,Discharged from Hospital,SCA non ST+ tropo -,1
+119,38, H,9/26/2014,88,1,1,Onde Q,SCA non ST+,0,USIC,Medecine,1,0,316425383,0.97,Ondes Q,Hospitalise,Discharged from Hospital,Discharged from Hospital,pericardite probable,2
+120,89, H,10/18/2014,78,1,1,Trouble de la repolarisation non ST+,SCA non ST+,0,USIC,Medecine,1,0,316665490,1.07,Q sequellaire anterieur ,Hospitalise,Discharged from Hospital,Rehospitalise,DT non cororienne,2
+121,86, H,11/24/2014,104,1,1,Normal,SCA non ST+,1,USIC,USIC ADV puis Cardio B ADV,1,0,317079890,0.89,Normal,Hospitalise,Discharged from Hospital,Discharged from Hospital,Douleur angineuse,2
+122,41, H,12/3/2014,91,1,1,Normal,SCA non ST+,0,SAUV,Medecine,1,1,317169212,1.1,Trouble de la repolarisation non ST+,Hospitalise,Discharged from Hospital,Discharged from Hospital,DT non cororienne,10
+123,62, H,12/19/2014,203,1,1,Normal,SCA non ST+,1,USIC,Non (USIC puis RAD),1,0,317394478,0.98,BAV non,Discharged from Hospital,Discharged from Hospital,Discharged from Hospital,DT non cororienne,1
+124,88, H,12/26/2014,91,1,1,Trouble de la repolarisation non ST+,SCA non ST+,0,USIC,Medecine,1,0,317409178,0.95,Trouble de la repolarisation non ST+,Hospitalise,Rehospitalise,Discharged from Hospital,Myocardite,2
+125,15, T,1/2/2014,90,1,1,Trouble de la repolarisation non ST+,SCA non ST+,1,Franciscaines POSU,,,,313681037,1.21,Trouble de la repolarisation non ST+,Hospitalise,Discharged from Hospital,Discharged from Hospital,SCA non ST+ tropo +,5
+127,15, T,1/20/2014,66,1,1,Normal,SCA non ST+,0,USIC,Medecine,1,0,313673764,1.48,Trouble de la repolarisation non ST+,Hospitalise,Discharged from Hospital,Discharged from Hospital,DT non cororienne,2
+128,22, T,1/24/2014,76,1,1,Trouble de la repolarisation non ST+,SCA non ST+,0,SAUV,Medecine,1,1,313751008,2.02,Trouble de la repolarisation non ST+,Hospitalise,Hospitalise,Discharged from Hospital,SCA fonctionnel,19
+129,26, T,1/25/2014,67,1,1,Normal,SCA non ST+,0,SAU medico chir,Non,1,1,313756941,0.9,Normal,Hospitalise,Discharged from Hospital,Discharged from Hospital,crise d angoisse,1
+130,12, T,1/25/2014,79,1,1,Normal,SCA non ST+,0,USIC,Non,1,0,313757230,1.12,Normal,Hospitalise,Discharged from Hospital,Discharged from Hospital,anevrisme de l Ao Abdo ,1
+131,32, T,1/14/2014,75,1,1,Normal,SCA non ST+,0,SAUV,Non,1,1,313589588,1.2,Normal,Hospitalise,Discharged from Hospital,Discharged from Hospital,DT non cororienne ,1
+132,25, T,2/3/2014,87,1,1,BBG complet  ,SCA non ST+,0,USIC,Non,1,0,313860524,2.26,BIG,Hospitalise,Discharged from Hospital,Discharged from Hospital,DT non cororienne,1
+133,17, T,2/3/2014,55,1,1,Normal,Douleur non cororienne,0,SAU medico chir,Non,1,1,313859059,0.78,Normal,Discharged from Hospital,Discharged from Hospital,Discharged from Hospital,UGD,1
+134,17, T,2/5/2014,76,1,1,BBD,SCA non ST+,0,USIC,Medecine,1,0,313896780,1.07,BID et HBAG ,Hospitalise,Discharged from Hospital,Discharged from Hospital,SCA non ST+,6
+135,17, T,2/22/2014,91,1,1,Trouble de la repolarisation non ST+,SCA non ST+,0,USIC,Non,1,0,314116038,1.02,Trouble de la repolarisation non ST+,Discharged from Hospital,Discharged from Hospital,Discharged from Hospital,DT non cororienne,1
+136,14, T,3/15/2014,84,1,1,ACFA,ACFA,0,USIC,Medecine,1,0,314354637,1.33,ACFA,Hospitalise,Discharged from Hospital,Discharged from Hospital,ACFA,2
+136,14, T,3/15/2014,84,1,1,ACFA,ACFA,0,USIC,Medecine,1,0,314354637,1.33,ACFA,Hospitalise,Discharged from Hospital,Discharged from Hospital,ACFA,2
+137,25, T,3/23/2014,75,1,1,Trouble de la repolarisation non ST+,SCA non ST+,1,Franciscaines POSU,Non,1,0,314847940,1.4,Trouble de la repolarisation non ST+,Hospitalise,Discharged from Hospital,Discharged from Hospital,SCA non ST+ tropo +,4
+138,26, T,3/23/2014,77,0,0,Normal,Polytraumatise,0,SAUV ,DAR C,0,1,314444671,,Normal,Hospitalise,Hospitalise,Reeducation Mont Favet,Polytraumatise,65
+139,24, T,3/24/2014,88,1,1,Normal,Polytraumatise,0,SAUV,Chirurgie orthopedique,1,1,314453242,1.27,Normal,Hospitalise,Hospitalise,Discharged from Hospital,Polyfracture,14
+140,26, T,3/31/2014,97,1,1,Trouble de la repolarisation non ST+,PNP et DT,0,SAU medico chir,Medecine,1,1,314546569,1.02,Normal,Hospitalise,Hospitalise,Discharged from Hospital,Pneumopathie,10
+141,16, T,4/1/2014,87,1,1,BIG recent,SCA non ST+,1,Franciscaines POSU,Non,1,0,314913207,1.19,Trouble de la repolarisation non ST+,Hospitalise,Discharged from Hospital,Discharged from Hospital,SCA non ST+ tropo +,5
+144,26, T,4/3/2014,86,1,1,Normal,Douleur non cororienne,0,SAU medico chir,Non,1,1,314593911,1.04,Normal,Discharged from Hospital,Discharged from Hospital,Discharged from Hospital,DT non cororienne,1
+145,19, T,4/3/2014,106,1,1,Normal,SCA non ST+,0,USIC,Non,1,0,314588208,1.03,BIG,Discharged from Hospital,Discharged from Hospital,Discharged from Hospital,DT non cororienne,1
+146,19, T,4/7/2014,149,1,1,Normal,Polytraumatise,0,SAUV,chirurgie digesive ,1,1,314620967,1.15,Normal,Hospitalise,Hospitalise,Hospitalise,Polytraumatise,31
+148,31, T,4/14/2014,83,1,1,Normal,SCA non ST+,0,USIC,Medecine,1,0,314705720,0.9,Normal,Hospitalise,Discharged from Hospital,Discharged from Hospital,DT non cororienne ,2
+149,21, T,4/14/2014,79,1,1,Trouble de la repolarisation non ST+,SCA non ST+,1,Franciscaines POSU,Non,1,0,315055019,1.04,Trouble de la repolarisation non ST+,Hospitalise,Discharged from Hospital,Discharged from Hospital,SCA non ST+ tropo +,5
+150,41, T,4/14/2014,99,1,1,Trouble de la repolarisation non ST+,SCA non ST+,1,Franciscaines POSU,,,,314705913,,,,,,,
+151,27, T,4/16/2014,107,1,1,flutter ,SCA non ST+,1,Franciscaines POSU,Non,1,0,315126671,1.3,Flutter,Hospitalise,Hospitalise,Discharged from Hospital,Maladie de l oreillette,19
+152,28, T,4/16/2014,134,1,1,FA,Douleur non cororienne,0,USIC,Non,1,0,314736167,0.82,ACFA,Discharged from Hospital,Discharged from Hospital,Discharged from Hospital,acces de FA paroxystique sur coeur sain. retour en RS,1
+153,34, T,4/16/2014,89,1,1,ST +,SCA ST+,0,Cororographie,Medecine,1,0,314745962,0.93,ST+,Hospitalise,Discharged from Hospital,Discharged from Hospital,SCA ST+,4
+154,21, T,4/17/2014,86,1,1,Trouble de la repolarisation non ST+,SCA non ST+,1,Franciscaines POSU,,,,315069556,,,,,,,
+155,16, T,4/24/2014,93,1,1,Normal,SCA non ST+,0,SAUV,Non,1,0,314837266,1.16,Normal,Hospitalise,Discharged from Hospital,Discharged from Hospital,DT non cororienne,1
+156,36, T,4/24/2014,116,0,0,Normal,Polytraumatise,0,Reanimation Chirurgicale,UMCH,0,1,314825880,0.87,Normal,Hospitalise,Hospitalise,toujours hospitalise en UMCH puis transfertservice cerebraux leses,Polytraumatise,62
+157,24, T,4/27/2014,104,1,1,Normal,Polytraumatise,0,SAUV,rapatriement Suisse,,,314855563,0.98,Normal,Hospitalise,,,Polytraumatise,1
+158,16, T,4/27/2014,103,1,1,Normal,Polytraumatise,0,SAUV,chirurgie orthopedique,1,1,314856792,0.95,Normal,Hospitalise,Discharged from Hospital,Discharged from Hospital,Fracture de membre,3
+159,20, T,4/27/2014,71,1,1,Normal,SCA non ST+,0,SAU medico chir,Non,1,1,314856511,1.12,Normal,Discharged from Hospital,Discharged from Hospital,Discharged from Hospital,DT non cororienne a bilante en externe,1
+160,36, T,4/27/2014,115,1,1,Trouble de la repolarisation non ST+,SCA non ST+,0,USIC,Non,1,0,314856373,0.98,Normal,Discharged from Hospital,Discharged from Hospital,Discharged from Hospital,DT non cororienne a bilante en externe,1
+161,15, T,4/27/2014,95,1,1,Normal,SCA non ST+,0,SAUV,Medecine,1,1,314855381,2.34,Normal,Hospitalise,Discharged from Hospital,Discharged from Hospital,exacerbation de BPCO,3
+162,45, T,2/21/2014,94,1,1,Trouble de la repolarisation non ST+,SCA non ST+,1,Franciscaines POSU,,,,,,,,,,,
+163,31, T,3/26/2014,90,1,1,Trouble de la repolarisation non ST+,SCA non ST+,0,USIC,Medecine,1,0,314488961,0.99,Trouble de la repolarisation non ST+,Hospitalise,Discharged from Hospital,Discharged from Hospital,DT sans lesion cororienne severe dans un contexte de bronchite. faire echo dobu a distance,1
+164,50, T,3/30/2014,124,1,1,ST +,SCA ST+,0,USIC,Medecine,1,0,314528862,1.5,Non modifie,Hospitalise,Hospitalise,Discharged from Hospital,SCA non ST+,8
+165,41, T,5/4/2014,85,1,1,Normal,SCA non ST+,1,cardiologie clinique Rhone Durance,,,,315284843,,,,,,,
+167,21, T,5/10/2014,75,1,1,HBAG  ,Douleur non cororienne,0,SAU medico chir,Non,1,1,314974610,1,HBAG,Discharged from Hospital,Discharged from Hospital,Discharged from Hospital,PNP ,1
+168,33, T,5/10/2014,103,1,1,Normal,Douleur non cororienne,1,Franciscaines POSU,,,,312286263,,,,,,,
+170,17, T,5/11/2014,136,0,1,Normal,Polytraumatise,0,Reanimation Chirurgicale,Cerebraux Leses,0,1,314978483,1.48,Normal,Hospitalise,Hospitalise,Hospitalise,Polytraumatise,58
+171,25, T,5/11/2014,105,1,1,Normal,SCA non ST+,0,USIC,Non,1,0,314978574,1.04,Normal,Discharged from Hospital,Discharged from Hospital,Discharged from Hospital,RGO,1
+172,26, T,5/12/2014,106,1,1,Normal,SCA non ST+,0,SAUV,Non,1,1,314982582,1.08,Normal,Discharged from Hospital,Discharged from Hospital,Discharged from Hospital,DT non cororienne,1
+173,29, T,5/18/2014,124,1,0,Normal,Polytraumatise,0,SAUV,UTEC Mpt,1,0,315060336,,Normal,Hospitalise,,,Polytraumatise,
+174,29, T,5/18/2014,104,1,0,Normal,Polytraumatise,0,SAU traumato,Non,1,1,315060540,1.1,Normal,Discharged from Hospital,Discharged from Hospital,Discharged from Hospital,contusions ,1
+175,29, T,5/18/2014,106,1,0,Normal,Polytraumatise,1,SAU CH Ales,Non,1,1,315435417,0.93,Normal,Hospitalise,Discharged from Hospital,Discharged from Hospital,Contusions,1
+176,29, T,5/18/2014,104,1,0,Normal,Polytraumatise,0,SAUV,chirurgie orthopedique,1,1,315060529,0.67,Normal,Hospitalise,Discharged from Hospital,Discharged from Hospital,Polyfracture,5
+177,15, T,5/19/2014,92,1,1,ST +,SCA ST+,1,Franciscaines POSU,Non,1,0,315439677,1.58,ST+,Hospitalise,Hospitalise,Discharged from Hospital,SCA ST+,9
+178,17, T,5/19/2014,78,1,1,Normal,AIT ,0,SAUV,Medecine,1,1,315078207,2.05,Normal,Hospitalise,Hospitalise,Hospitalise,AVC I,31
+179,72, T,5/19/2014,145,1,1,Normal,AVC,0,SAUV,Medecine,1,1,315069079,,Normal,Hospitalise,Rehospitalise,Rehospitalise,meningiome,3
+180,18, T,5/27/2014,108,1,1,Normal,SCA non ST+,0,SAUV,Medecine,1,1,315180225,1.58,Normal,Hospitalise,Rehospitalise,Rehospitalise,PNP ,6
+181,14, T,5/29/2014,79,1,1,ST +,SCA ST+,0,Cororographie,Medecine,1,0,315197545,1.45,ST+,Hospitalise,Rehospitalise,Rehospitalise,SCA ST+,4
+182,41, T,5/31/2014,108,1,1,Normal,SCA non ST+,0,SAU medico chir,Non,1,1,315208696,1.68,Normal,Discharged from Hospital,Discharged from Hospital,Discharged from Hospital,I Cardiaque,1
+182,41, T,5/31/2014,108,1,1,Normal,SCA non ST+,0,SAU medico chir,Non,1,1,315208696,1.68,Normal,Discharged from Hospital,Discharged from Hospital,Discharged from Hospital,I Cardiaque,1
+184,18, T,6/4/2014,89,1,1,Normal,SCA non ST+,0,SAU medico chir ,Non,1,1,315262261,,Normal,Discharged from Hospital,Discharged from Hospital,Discharged from Hospital,Gastrite,1
+185,23, T,6/6/2014,90,1,1,Normal,SCA non ST+,0,SAU medico chir ,Medecine,1,1,315286940,0.86,Trouble de la repolarisation non ST+,Hospitalise,Discharged from Hospital,Discharged from Hospital,SCA non ST+,3
+187,27, T,6/6/2014,99,1,1,Trouble de la repolarisation non ST+,SCA non ST+,0,SAU medico chir ,Non,1,1,315284377,0.93,Trouble de la repolarisation non ST+,Discharged from Hospital,Discharged from Hospital,Discharged from Hospital,decompensation cardiaque a minima,1
+188,25, T,6/13/2014,74,1,1,Normal,Douleur non cororienne,0,SAU medico chir ,Non,1,1,315351474,1.42,Normal,Discharged from Hospital,Discharged from Hospital,Discharged from Hospital,colique hepatique,1
+189,22, T,6/13/2014,87,1,1,Trouble de la repolarisation non ST+,SCA non ST+,0,SAU medico chir ,Medecine,1,1,315359137,1.03,TJ  ,Hospitalise,Discharged from Hospital,Discharged from Hospital,TJ reduite avec manoeuvre vagale sur SCA 1 ST+ trop +,3
+190,34, T,6/18/2014,106,1,0,Normal,Polytraumatise,1,SAU CH Ales,Non,1,1,315743816,0.9,Normal,Hospitalise,Discharged from Hospital,Discharged from Hospital,Entorse et Foulure du rachis cervical,1
+191,34, T,6/18/2014,106,1,0,Normal,Polytraumatise,1,SAU CH Ales,UHCD,1,1,315743860,0.88,Normal,Hospitalise,Discharged from Hospital,Discharged from Hospital,Commotion cerebrale + plaie de l oreille,1
+192,34, T,6/18/2014,106,1,0,Normal,Polytraumatise,0,SAUV,chirurgie digestive ,1,1,315414257,1.57,Normal,Hospitalise,Discharged from Hospital,Discharged from Hospital,Polytraumatise,5
+193,45, T,10/7/2014,143,1,1,Normal,SCA non ST+,0,SAUV,Medecine,1,1,316544236,1.43,Trouble de la repolarisation non ST+,Hospitalise,Discharged from Hospital,Discharged from Hospital,SCA non ST+,2
+194,19, T,10/17/2014,88,1,1,Normal,SCA non ST+,1,Franciscaines POSU,,,,316693564,,,,,,,
+195,29, T,10/21/2014,130,1,1,Normal,Polytraumatise,0,SAUV,chirurgie orthopedique,1,1,316691616,1.3,Normal,Hospitalise,Hospitalise,Discharged from Hospital,Polyfracture,7
+197,31, T,10/29/2014,63,1,1,Trouble de la repolarisation non ST+,SCA non ST+,1,Franciscaines POSU,Non,1,0,36805613,1.58,Trouble de la repolarisation non ST+,Hospitalise,Hospitalise,Discharged from Hospital,SCA non ST+ tropo +,9
+198,21, T,10/30/2014,88,1,1,ST +,SCA ST+,1,Franciscaines POSU,Reanimation,1,0,316821675,1.57,ST +,Hospitalise,Hospitalise,Hospitalise,Choc cardiogenique,110
+199,34, T,10/30/2014,89,1,1,Normal,SCA non ST+,0,USIC,Medecine,1,0,316786166,1.03,Normal,Hospitalise,Discharged from Hospital,Discharged from Hospital,SCA fonctionnel,1
+200,25, T,11/2/2014,143,1,0,Normal,Fracture ouverte femur droit isolee,1,SAU PGS,,,,316852307,,,,,,,
+201,20, T,11/2/2014,89,1,1,Normal,SCA non ST+,0,SAU medico chir,Non,1,1,316811376,1.01,Normal,Discharged from Hospital,Discharged from Hospital,Discharged from Hospital,RGO,1
+202,24, T,11/2/2014,70,1,1,Normal,DT atypique  ,0,SAU medico chir,Non,1,1,316810511,1.01,Normal,Discharged from Hospital,Discharged from Hospital,Discharged from Hospital,Crise d angoisse,1
+204,36, T,11/2/2014,72,1,1,Normal,Traumatisme peripherique,0,SAU traumato,Non,1,1,316811580,,Normal,Discharged from Hospital,Discharged from Hospital,Discharged from Hospital,Contusions,1
+205,15, T,11/5/2014,78,1,1,Ondes Q ,SCA non ST+,0,USIC,Non,1,0,316855779,1.01,Non modifie,Discharged from Hospital,Rehospitalise,Hospitalise,SCA non ST+ tropo -,1
+206,20, T,11/5/2014,63,1,1,Normal,Douleur non cororienne,0,SAU medico chir,Non,1,1,316851847,,Normal,Discharged from Hospital,Discharged from Hospital,Discharged from Hospital,Gastrite,1
+207,22, T,11/7/2014,86,1,1,Trouble de la repolarisation non ST+,SCA non ST+,1,Franciscaines POSU,Non,1,0,316901027,1.11,Trouble de la repolarisation non ST+,Hospitalise,Hospitalise,Discharged from Hospital,SCA non ST+ tropo +,10
+208,15, T,11/7/2014,88,1,1,Normal,angor  ,0,SAU medico chir,Medecine,1,1,316881644,1.08,Non modifie,Hospitalise,Hospitalise,Rehospitalise,angor et decompensation cardiaque,11
+209,39, T,11/12/2014,136,1,1,Normal,SCA non ST+,0,USIC,SSR,1,0,316916873,1.48,RET,Hospitalise,Hospitalise,hospitalise en SSR,SCA et choc cardiogenique,13
+210,27, T,11/24/2014,100,1,1,ST +,ACR sur SCA ST+,0,Cororographie,Reanimation,0,0,317051471,2.01,ST+,Hospitalise,Hospitalise,Discharged from Hospital,ACR recupere sur FV sur SCA ST+,8
+211,21, T,11/24/2014,102,1,1,ST +,SCA ST+,0,Cororographie,Medecine,1,0,317049505,1.58,ST+,Hospitalise,Discharged from Hospital,reeducation CV,SCA ST+,3
+212,34, T,12/2/2014,73,1,1,Normal,Polytraumatise,0,SAUV,Non,1,1,317142114,0.97,Normal,Discharged from Hospital,Discharged from Hospital,Discharged from Hospital,contusions ,1
+213,22, T,12/2/2014,85,1,1,Normal,DT atypique  ,0,SAUV,Non,1,1,317152661,,Non modifie,Discharged from Hospital,Discharged from Hospital,Discharged from Hospital,Gastrite,1
+214,34, T,12/2/2014,98,1,1,BBG complet  ,SCA non ST+,0,SAUV,Soins intensifs ou continus,1,0,317145382,1.21,BBG complet,Hospitalise,Discharged from Hospital,Rehospitalise,SCA Fonctionnel,3
+215,31, T,12/3/2014,112,1,1,Trouble de la repolarisation non ST+,SCA non ST+,1,Franciscaines POSU,Non,1,0,317269680,1.58,Trouble de la repolarisation non ST+,Hospitalise,Discharged from Hospital,Discharged from Hospital,SCA non ST+ tropo +,7
+216,41, T,12/19/2014,95,1,1,BBD,SCA non ST+,1,Franciscaines POSU,Non,1,0,317408528,1.68,Trouble de la repolarisation non ST+,Hospitalise,Discharged from Hospital,Discharged from Hospital,SCA non ST+ tropo +,6
+217,21, T,12/19/2014,68,1,1,Normal,AVC,0,SAU medico chir,retour EPHAD,1,1,317359761,0.94,Normal,Discharged from Hospital,Discharged from Hospital,Discharged from Hospital,probable AIC rapidement regressif,1
+217,18, T,6/25/2014,44,1,1,Normal,AVC,0,SAUV,Medecine,1,1,315487294,1.01,Normal,Hospitalise,Discharged from Hospital,Discharged from Hospital,AIT,2
+218,22, T,6/25/2014,85,1,1,BBD incomplet,SCA non ST+,0,USIC,Medecine,1,1,315484092,1.39,BBD incomplet,Hospitalise,Discharged from Hospital,Discharged from Hospital,SCA non ST+tropo+ a coroire saine avec FEVG tres altere a 35% en rapport tres probablement avec une cardiopathie de stress (sd de Tako Tsubo),3
+221,34, T,6/30/2014,96,1,1,Ondes Q ,SCA non ST+,1,Franciscaines POSU,Non,1,0,315839890,1.65,Ondes Q,Hospitalise,Discharged from Hospital,Discharged from Hospital,SCA non ST+ tropo +,5
+222,26, T,12/26/2014,116,1,1,Trouble de la repolarisation non ST+,SCA non ST+,0,USIC,Medecine,1,0,317411544,1.45,ST+,Hospitalise,Discharged from Hospital,Rehospitalise,SCA ST+,6
+223,22, T,12/26/2014,91,1,1,ST +,SCA ST+,0,Cororographie,Medecine,1,0,317407999,1.22,ST+,Hospitalise,Discharged from Hospital,Rehospitalise,SCA ST+,5
+224,33, T,12/26/2014,58,1,1,Normal,SCA non ST+,0,SAU medico chir,Non,1,1,317411613,,Normal,Discharged from Hospital,Discharged from Hospital,Discharged from Hospital,DT non cororienne,1
+225,31, T,7/27/2014,43,1,1,Normal,DT atypique  ,0,SAU medico chir,Non,1,1,315759157,,Normal,Discharged from Hospital,Discharged from Hospital,Discharged from Hospital,DT non cororienne,1
+226,41, T,7/21/2014,96,1,1,Trouble de la repolarisation non ST+,SCA non ST+,1,Franciscaines POSU,Non,1,0,316013105,1.6,Trouble de la repolarisation non ST+,Hospitalise,Discharged from Hospital,Discharged from Hospital,DT non cororienne,3
+227,27, T,7/21/2014,75,1,1,Normal,Malaise sans PCI,0,SAU medico chir ,Non,1,1,315758981,,Normal,Discharged from Hospital,Discharged from Hospital,Discharged from Hospital,Gastrite,1
+228,32, T,7/21/2014,128,1,1,Normal,DT atypique  ,0,SAU medico chir U,Non,1,1,315760917,1.44,Normal,Discharged from Hospital,Discharged from Hospital,Rehospitalise,DT non cororienne,1
+229,25, T,7/26/2014,80,1,1,Normal,Detresse Respiratoire Aigue,0,SAUV,Reanimation,0,1,315820167,0.99,Normal,Hospitalise,Hospitalise,Decreased,decompensation BPCO sur PNP,16
+230,41, T,7/27/2014,90,1,1,BBD incomplet,DT atypique  ,0,SAU medico chir U,Non,1,1,315844234,0.83,BBD incomplet,Discharged from Hospital,Discharged from Hospital,Discharged from Hospital,nevralgie intercostale,1
+231,27, T,7/29/2014,106,1,1,Normal,AVC,0,SAUV,Medecine,1,1,315846659,1.15,Normal,Hospitalise,Discharged from Hospital,Discharged from Hospital,Etat de mal Epileptique,6
+232,15, T,8/2/2014,84,1,1,ACFA,SCA non ST+,1,Franciscaines POSU,Non,1,0,316084362,1.1,ACFA,Hospitalise,Discharged from Hospital,Discharged from Hospital,DT non cororienne,2
+233,38, T,8/2/2014,97,1,1,Normal,Polytraumatise,0,SAUV,chirurgie orthopedique,1,1,315882936,,Normal,Hospitalise,Discharged from Hospital,Discharged from Hospital,Fracture de membre,4
+234,16, T,8/2/2014,105,1,1,HBAG  ,SCA non ST+,1,Franciscaines POSU,Non,1,0,316088181,,,,,,,
+235,31, T,8/16/2014,87,1,1,Normal,SCA non ST+,0,SAUV,Medecine,1,1,315988507,1.12,ACFA,Hospitalise,Discharged from Hospital,Discharged from Hospital,angor fonctionnel sur passage en FA,1
+236,26, T,8/16/2014,80,1,1,BBD  ,SCA non ST+,0,SAUV,Medecine,1,1,315988777,0.99,BBD   ,Hospitalise,Discharged from Hospital,reeducation CV,SCA non ST+,4
+237,62, T,8/16/2014,149,1,1,Trouble de la repolarisation non ST+,SCA non ST+,0,Cororographie,Medecine,1,1,315989292,0.98,Trouble de la repolarisation non ST+,Hospitalise,Discharged from Hospital,Discharged from Hospital,SCA non ST+,2
+238,33, T,8/18/2014,88,1,1,ST +,SCA ST+,0,Cororographie,Reanimation,0,1,315997745,3.15,ST+,Hospitalise,Decreased,Decreased,SCA ST + et choc cardiogenique,6
+239,29, T,8/18/2014,110,1,1,TJ,TJ,0,SAUV,Non,1,1,315998136,1.11,TJ  ,Discharged from Hospital,Discharged from Hospital,Discharged from Hospital,TJ reduite avec manoeuvre vagale ,1
+240,58, T,8/20/2014,199,0,1,BAV 3,Choc cardiogenique et ACR,0,SAUV,Non,1,1,316025206,,rythme d echappement ventriculaire,Decreased,Decreased,Decreased,choc cardiogenique et ACR,1
+241,20, T,8/21/2014,114,1,1,ACFA,SCA non ST+,1,Franciscaines POSU,Non,1,0,316197540,1.43,ACFA,Hospitalise,Hospitalise,Discharged from Hospital,DT non cororienne,23
+242,48, T,8/18/2014,109,1,1,ST +,SCA ST+,1,USIC,Non ,1,0,316198634,0.87,REE,Hospitalise,Discharged from Hospital,Discharged from Hospital,Douleur suspecte chez un cororien,1
+243,23, T,8/25/2014,95,1,1,ST +,SCA ST+,1,Franciscaines POSU,Non,1,0,316230293,1.45,ST +,Hospitalise,Hospitalise,Discharged from Hospital,SCA ST+,8
+244,23, T,8/28/2014,77,1,1,Normal,SCA non ST+,0,USIC,Medecine,1,0,316101803,1.04,BBD incomplet,Hospitalise,Rehospitalise,Discharged from Hospital,angor  ,2
+245,27, T,8/28/2014,98,1,0,Normal,Polytraumatise,0,SAU traumato,Non,1,1,316093910,,Normal,Discharged from Hospital,Discharged from Hospital,Discharged from Hospital,contusions simplex,1
+246,32, T,8/28/2014,79,1,1,Normal,Polytraumatise,0,SAUV,Non,1,1,316096532,0.99,Normal,Discharged from Hospital,Discharged from Hospital,Discharged from Hospital,Contusions,1
+247,27, T,9/21/2014,116,1,1,Trouble de la repolarisation non ST+,SCA non ST+,0,USIC,Medecine,1,0,316351254,1.03,Trouble de la repolarisation non ST+,Hospitalise,Discharged from Hospital,Discharged from Hospital,SCA non ST+,3
+248,34, T,9/4/2014,97,1,1,Normal,SCA non ST+,0,SAUV,Non,1,1,316172696,0.93,Normal,Discharged from Hospital,Discharged from Hospital,Discharged from Hospital,DT atypique prevoir epreuve d effort en externe ,1
+249,35, T,9/7/2014,101,1,1,Normal,SCA non ST+,0,SAUV,Non,1,1,316191431,1.13,Normal,Discharged from Hospital,Discharged from Hospital,Discharged from Hospital,RGO probable,1
+250,45, T,9/19/2014,149,1,1,REE  ,SCA non ST+,1,Franciscaines POSU,Non,1,0,316395861,1.1,REE,Hospitalise,Discharged from Hospital,Discharged from Hospital,DT non cororienne,2
+251,22, T,10/2/2014,89,1,1,Normal,DT atypique  ,0,SAU medico chir ,Non,1,1,316493816,1.07,Normal,Discharged from Hospital,Discharged from Hospital,Discharged from Hospital,DT atyique non cororienne. cephalees isolees,1

@@ -1,0 +1,240 @@
+distance_km,out_of_hospital_time_minute,mode,mode_long,diagnostic_smur,outcome_28day,id,diagnostic_smur_more_detail,,diagnostic_smur(original)
+76.3,127,H,Helicopter,acute coronary syndrome,Discharged from Hospital,1,SCA ST+,major,SCA ST+
+40.9,70,H,Helicopter,acute coronary syndrome,Discharged from Hospital,2,SCA ST+,major,SCA ST+
+85.1,103,H,Helicopter,strokes,Decreased,3,AVC,major,AVC
+57.9,90,H,Helicopter,acute coronary syndrome,Discharged from Hospital,4,SCA ST+,major,SCA ST+
+50.4,88,H,Helicopter,acute coronary syndrome,Discharged from Hospital,5,SCA ST+,major,SCA ST+
+78.3,97,H,Helicopter,strokes,Discharged from Hospital,6,AVC,major,AVC
+74,86,H,Helicopter,acute coronary syndrome,Discharged from Hospital,7,SCA ST+,major,SCA ST+
+77,152,H,Helicopter,severe trauma,Discharged from Hospital,8,Polytraumatise,major,Polytraumatise
+69,141,H,Helicopter,acute coronary syndrome,Discharged from Hospital,9,SCA ST+,major,SCA ST+
+62,139,H,Helicopter,severe trauma,Hospitalise,10,Polytraumatise,major,Polytraumatise
+57,115,H,Helicopter,severe trauma,Discharged from Hospital,11,Polytraumatise,major,Polytraumatise
+72,108,H,Helicopter,strokes,Discharged from Hospital,12,AVC,major,AVC
+72,99,H,Helicopter,strokes,Discharged from Hospital,13,AVC,major,AVC
+68,67,H,Helicopter,strokes,Discharged from Hospital,14,AVC,major,AVC
+38,84,H,Helicopter,acute coronary syndrome,Discharged from Hospital,15,SCA ST+,major,SCA ST+
+132,152,H,Helicopter,acute coronary syndrome,Discharged from Hospital,16,SCA ST+,major,SCA ST+
+38,63,H,Helicopter,acute coronary syndrome,SSR,17,SCA ST+,major,SCA ST+
+43,127,H,Helicopter,other tramua,Discharged from Hospital,18,Contusions,Other,Contusions
+72,103,H,Helicopter,acute coronary syndrome,Discharged from Hospital,19,SCA non ST+,major,SCA non ST+
+48,104,H,Helicopter,acute coronary syndrome,SSR,20,SCA ST+,major,SCA ST+
+88,80,H,Helicopter,strokes,SSR,21,AVC,major,AVC
+88,153,H,Helicopter,strokes,sortie hospitalisation,22,AVC,major,AVC
+43,152,H,Helicopter,severe trauma,Hospitalise,23,Polytraumatise,major,Polytraumatise
+45,188,H,Helicopter,severe trauma,Discharged from Hospital,24,Polytraumatise,major,Polytraumatise
+73,83,H,Helicopter,strokes,reeducation,25,AVC,major,AVC
+46,115,H,Helicopter,severe trauma,Decreased,28,Polytraumatise,major,Polytraumatise
+102,114,H,Helicopter,severe trauma,Discharged from Hospital,29,Polytraumatise,major,Polytraumatise
+24,59,H,Helicopter,severe trauma,Discharged from Hospital,30,Polytraumatise,major,Polytraumatise
+24,136,H,Helicopter,severe trauma,Decreased,31,Polytraumatise,major,Polytraumatise
+48,92,H,Helicopter,severe trauma,Discharged from Hospital,32,Polytraumatise,major,Polytraumatise
+39,266,H,Helicopter,severe trauma,Hospitalise,33,Polytraumatise,major,Polytraumatise
+45,125,H,Helicopter,severe trauma,Hospitalise,34,Polytraumatise,major,Polytraumatise
+52,78,H,Helicopter,acute coronary syndrome,Discharged from Hospital,35,SCA ST+,major,SCA ST+
+117,85,H,Helicopter,strokes,Discharged from Hospital,36,AVC,major,AVC
+62,98,H,Helicopter,acute coronary syndrome,Discharged from Hospital,37,SCA ST+,major,SCA ST+
+57,107,H,Helicopter,severe trauma,Discharged from Hospital,38,Polytraumatise,major,Polytraumatise
+46,161,H,Helicopter,acute coronary syndrome,Discharged from Hospital,39,SCA ST+,major,SCA ST+
+39,111,H,Helicopter,severe trauma,Discharged from Hospital,40,Polytraumatise,major,Polytraumatise
+24,35,H,Helicopter,severe trauma,inconnue rapatriement allemagne a J4,41,Polytraumatise,major,Polytraumatise
+101,152,H,Helicopter,severe trauma,Discharged from Hospital,42,Polytraumatise,major,Polytraumatise
+58,154,H,Helicopter,severe trauma,Hospitalise,43,Polytraumatise,major,Polytraumatise
+46,104,H,Helicopter,severe trauma,Discharged from Hospital,44,Polytraumatise,major,Polytraumatise
+60,131,H,Helicopter,acute coronary syndrome,Discharged from Hospital,45,SCA ST+,major,SCA ST+
+126,96,H,Helicopter,strokes,Hospitalise,46,AVC,major,AVC
+38,93,H,Helicopter,severe trauma,Hospitalise,47,Polytraumatise,major,Polytraumatise
+27,189,H,Helicopter,severe trauma,Decreased,48,Polytraumatise,major,Polytraumatise
+61,97,H,Helicopter,acute coronary syndrome,Discharged from Hospital,49,SCA ST+,major,SCA ST+
+57,85,H,Helicopter,strokes,Discharged from Hospital,50,AVC,major,AVC
+45,152,H,Helicopter,acute coronary syndrome,Discharged from Hospital,51,SCA ST+,major,SCA ST+
+74,114,H,Helicopter,severe trauma,Hospitalise,52,Polytraumatise,major,Polytraumatise
+41,57,H,Helicopter,acute coronary syndrome,Decreased,53,SCA ST+,major,SCA ST+
+56,81,H,Helicopter,severe trauma,Discharged from Hospital,54,Polytraumatise,major,Polytraumatise
+108,122,H,Helicopter,strokes,Hospitalise,55,AVC,major,AVC
+58,103,H,Helicopter,severe trauma,Hospitalise,56,Polytraumatise,major,Polytraumatise
+24,78,H,Helicopter,severe trauma,rapprochement familial aix les bains en USC Dr Monnet 0609807373,57,Polytraumatise,major,Polytraumatise
+42,170,H,Helicopter,severe trauma,reeducation,58,Polytraumatise,major,Polytraumatise
+68,85,H,Helicopter,acute coronary syndrome,Discharged from Hospital,59,SCA ST+,major,SCA ST+
+46,90,H,Helicopter,severe trauma,Decreased,60,Polytraumatise,major,Polytraumatise
+62,113,H,Helicopter,acute coronary syndrome,transferee hopital d Ales. duree totale hospitalisation ?,62,SCA ST+,major,SCA ST+
+58,153,H,Helicopter,severe trauma,Discharged from Hospital,63,Polytraumatise,major,Polytraumatise
+89,102,H,Helicopter,acute coronary syndrome,reeducation CV,64,SCA ST+,major,SCA ST+
+31,72,H,Helicopter,severe trauma,Discharged from Hospital,65,Polytraumatise,major,Polytraumatise
+48,107,H,Helicopter,acute coronary syndrome,rapatriement J5 vers Besancon. duree totale hospitalisation ?,66,SCA ST+,major,SCA ST+
+62,90,H,Helicopter,acute coronary syndrome,reeducation CV,67,SCA ST+,major,SCA ST+
+93,99,H,Helicopter,acute coronary syndrome,Discharged from Hospital,68,SCA ST+,major,SCA ST+
+62,110,H,Helicopter,acute coronary syndrome,reeducation CV,69,SCA ST+,major,SCA ST+
+76,193,H,Helicopter,strokes,Rehospitalise,70,AVC,major,AVC
+76,76,H,Helicopter,acute coronary syndrome,Discharged from Hospital,71,SCA ST+,major,SCA ST+
+41,118,H,Helicopter,severe trauma,Hospitalise,72,Polytraumatise,major,Polytraumatise
+28,98,H,Helicopter,severe trauma,Discharged from Hospital,73,Polytraumatise,major,Polytraumatise
+99,121,H,Helicopter,strokes,rapatriement St Malo Dr Drouet. duree totale hospitalisation ?,74,AVC,major,AVC
+84,107,H,Helicopter,strokes,Discharged from Hospital,75,AVC,major,AVC
+58,167,H,Helicopter,severe trauma,Hospitalise,76,Polytraumatise,major,Polytraumatise
+56,93,H,Helicopter,acute coronary syndrome,Decreased,77,SCA ST+,major,SCA ST+
+87,137,H,Helicopter,severe trauma,Decreased,78,Polytraumatise,major,Polytraumatise
+52,84,H,Helicopter,acute coronary syndrome,Discharged from Hospital,79,SCA ST+,major,SCA ST+
+50,81,H,Helicopter,strokes,Discharged from Hospital,80,AVC,major,AVC
+85,176,H,Helicopter,strokes,Decreased,81,AVC,major,AVC
+76,145,H,Helicopter,severe trauma,Hospitalise,83,Polytraumatise,major,Polytraumatise
+41,61,H,Helicopter,strokes,Discharged from Hospital,84,AVC,major,AVC
+57,63,H,Helicopter,strokes,Decreased,85,AVC,major,AVC
+41,139,H,Helicopter,severe trauma,Decreased,86,Polytraumatise,major,Polytraumatise
+48,65,H,Helicopter,severe trauma,Discharged from Hospital,87,Polytraumatise,major,Polytraumatise
+64,86,H,Helicopter,strokes,Decreased,88,AVC,major,AVC
+68,95,H,Helicopter,severe trauma,Discharged from Hospital,89,Polytraumatise,major,Polytraumatise
+24,109,H,Helicopter,severe trauma,Discharged from Hospital,90,Polytraumatise,major,Polytraumatise
+46,87,H,Helicopter,acute coronary syndrome,Discharged from Hospital,91,SCA ST+,major,SCA ST+
+50,96,H,Helicopter,severe trauma,Discharged from Hospital,92,Polytraumatise,major,Polytraumatise
+25,68,H,Helicopter,severe trauma,Discharged from Hospital,93,Polytraumatise,major,Polytraumatise
+93,117,H,Helicopter,acute coronary syndrome,Rehospitalise,94,SCA ST+,major,SCA ST+
+52,235,H,Helicopter,severe trauma,Discharged from Hospital,95,Polytraumatise,major,Polytraumatise
+61,159,H,Helicopter,acute coronary syndrome,Decreased,96,ACR sur SCA,Other,ACR sur SCA
+70,114,H,Helicopter,acute coronary syndrome,transfert cardio hopital d Ales,97,SCA ST+,major,SCA ST+
+38,89,H,Helicopter,severe trauma,Discharged from Hospital,98,Polytraumatise,major,Polytraumatise
+46,80,H,Helicopter,acute coronary syndrome,Discharged from Hospital,99,SCA ST+,major,SCA ST+
+93,164,H,Helicopter,strokes,Discharged from Hospital,100,AVC,major,AVC
+66,142,H,Helicopter,severe trauma,Discharged from Hospital,101,Polytraumatise,major,Polytraumatise
+55,95,H,Helicopter,acute coronary syndrome,Discharged from Hospital,102,SCA non ST+,major,SCA non ST+
+63,84,H,Helicopter,acute coronary syndrome,Discharged from Hospital,103,SCA non ST+,major,SCA non ST+
+78,90,H,Helicopter,acute coronary syndrome,Discharged from Hospital,104,SCA non ST+,major,SCA non ST+
+72,88,H,Helicopter,acute coronary syndrome,Discharged from Hospital,105,SCA non ST+,major,SCA non ST+
+46,75,H,Helicopter,acute coronary syndrome,Discharged from Hospital,106,SCA non ST+,major,SCA non ST+
+48,129,H,Helicopter,acute coronary syndrome,Discharged from Hospital,107,SCA non ST+,major,SCA non ST+
+83,137,H,Helicopter,acute coronary syndrome,Discharged from Hospital,108,SCA non ST+,major,SCA non ST+
+78,89,H,Helicopter,acute coronary syndrome,Discharged from Hospital,109,SCA non ST+,major,SCA non ST+
+88,127,H,Helicopter,acute coronary syndrome,Discharged from Hospital,110,SCA non ST+,major,SCA non ST+
+89,100,H,Helicopter,acute coronary syndrome,Discharged from Hospital,111,SCA non ST+,major,SCA non ST+
+110,100,H,Helicopter,acute coronary syndrome,Discharged from Hospital,112,SCA non ST+,major,SCA non ST+
+33,49,H,Helicopter,acute coronary syndrome,Discharged from Hospital,113,SCA non ST+,major,SCA non ST+
+52,98,H,Helicopter,acute coronary syndrome,Discharged from Hospital,114,SCA non ST+,major,SCA non ST+
+76,82,H,Helicopter,acute coronary syndrome,Discharged from Hospital,115,SCA non ST+,major,SCA non ST+
+74,112,H,Helicopter,acute coronary syndrome,Discharged from Hospital,116,SCA non ST+,major,SCA non ST+
+74,113,H,Helicopter,acute coronary syndrome,Discharged from Hospital,116,SCA non ST+,major,SCA non ST+
+77,125,H,Helicopter,acute coronary syndrome,SSR,117,SCA non ST+,major,SCA non ST+
+52,70,H,Helicopter,acute coronary syndrome,Discharged from Hospital,118,SCA non ST+,major,SCA non ST+
+38,88,H,Helicopter,acute coronary syndrome,Discharged from Hospital,119,SCA non ST+,major,SCA non ST+
+89,78,H,Helicopter,acute coronary syndrome,Rehospitalise,120,SCA non ST+,major,SCA non ST+
+86,104,H,Helicopter,acute coronary syndrome,Discharged from Hospital,121,SCA non ST+,major,SCA non ST+
+41,91,H,Helicopter,acute coronary syndrome,Discharged from Hospital,122,SCA non ST+,major,SCA non ST+
+62,203,H,Helicopter,acute coronary syndrome,Discharged from Hospital,123,SCA non ST+,major,SCA non ST+
+88,91,H,Helicopter,acute coronary syndrome,Discharged from Hospital,124,SCA non ST+,major,SCA non ST+
+15,90,T,Ground,acute coronary syndrome,Discharged from Hospital,125,SCA non ST+,major,SCA non ST+
+15,66,T,Ground,acute coronary syndrome,Discharged from Hospital,127,SCA non ST+,major,SCA non ST+
+22,76,T,Ground,acute coronary syndrome,Discharged from Hospital,128,SCA non ST+,major,SCA non ST+
+26,67,T,Ground,acute coronary syndrome,Discharged from Hospital,129,SCA non ST+,major,SCA non ST+
+12,79,T,Ground,acute coronary syndrome,Discharged from Hospital,130,SCA non ST+,major,SCA non ST+
+32,75,T,Ground,acute coronary syndrome,Discharged from Hospital,131,SCA non ST+,major,SCA non ST+
+25,87,T,Ground,acute coronary syndrome,Discharged from Hospital,132,SCA non ST+,major,SCA non ST+
+17,55,T,Ground,severe trauma,Discharged from Hospital,133,Distress non cororienne,major,Douleur non cororienne
+17,76,T,Ground,acute coronary syndrome,Discharged from Hospital,134,SCA non ST+,major,SCA non ST+
+17,91,T,Ground,acute coronary syndrome,Discharged from Hospital,135,SCA non ST+,major,SCA non ST+
+14,84,T,Ground,other coronary syndrome,Discharged from Hospital,136,ACFA,Other,ACFA
+14,84,T,Ground,other coronary syndrome,Discharged from Hospital,136,ACFA,Other,ACFA
+25,75,T,Ground,acute coronary syndrome,Discharged from Hospital,137,SCA non ST+,major,SCA non ST+
+26,77,T,Ground,severe trauma,Reeducation Mont Favet,138,Polytraumatise,major,Polytraumatise
+24,88,T,Ground,severe trauma,Discharged from Hospital,139,Polytraumatise,major,Polytraumatise
+26,97,T,Ground,other,Discharged from Hospital,140,PNP et DT,Other,PNP et DT
+16,87,T,Ground,acute coronary syndrome,Discharged from Hospital,141,SCA non ST+,major,SCA non ST+
+26,86,T,Ground,severe trauma,Discharged from Hospital,144,Distress non cororienne,major,Douleur non cororienne
+19,106,T,Ground,acute coronary syndrome,Discharged from Hospital,145,SCA non ST+,major,SCA non ST+
+19,149,T,Ground,severe trauma,Hospitalise,146,Polytraumatise,major,Polytraumatise
+31,83,T,Ground,acute coronary syndrome,Discharged from Hospital,148,SCA non ST+,major,SCA non ST+
+21,79,T,Ground,acute coronary syndrome,Discharged from Hospital,149,SCA non ST+,major,SCA non ST+
+41,99,T,Ground,acute coronary syndrome,Discharged from Hospital,150,SCA non ST+,major,SCA non ST+
+27,107,T,Ground,acute coronary syndrome,Discharged from Hospital,151,SCA non ST+,major,SCA non ST+
+28,134,T,Ground,severe trauma,Discharged from Hospital,152,Distress non cororienne,major,Douleur non cororienne
+34,89,T,Ground,acute coronary syndrome,Discharged from Hospital,153,SCA ST+,major,SCA ST+
+21,86,T,Ground,acute coronary syndrome,Discharged from Hospital,154,SCA non ST+,major,SCA non ST+
+16,93,T,Ground,acute coronary syndrome,Discharged from Hospital,155,SCA non ST+,major,SCA non ST+
+36,116,T,Ground,severe trauma,toujours hospitalise en UMCH puis transfertservice cerebraux leses,156,Polytraumatise,major,Polytraumatise
+24,104,T,Ground,severe trauma,Discharged from Hospital,157,Polytraumatise,major,Polytraumatise
+16,103,T,Ground,severe trauma,Discharged from Hospital,158,Polytraumatise,major,Polytraumatise
+20,71,T,Ground,acute coronary syndrome,Discharged from Hospital,159,SCA non ST+,major,SCA non ST+
+36,115,T,Ground,acute coronary syndrome,Discharged from Hospital,160,SCA non ST+,major,SCA non ST+
+15,95,T,Ground,acute coronary syndrome,Discharged from Hospital,161,SCA non ST+,major,SCA non ST+
+45,94,T,Ground,acute coronary syndrome,Discharged from Hospital,162,SCA non ST+,major,SCA non ST+
+31,90,T,Ground,acute coronary syndrome,Discharged from Hospital,163,SCA non ST+,major,SCA non ST+
+50,124,T,Ground,acute coronary syndrome,Discharged from Hospital,164,SCA ST+,major,SCA ST+
+41,85,T,Ground,acute coronary syndrome,Discharged from Hospital,165,SCA non ST+,major,SCA non ST+
+21,75,T,Ground,severe trauma,Discharged from Hospital,167,Distress non cororienne,major,Douleur non cororienne
+33,103,T,Ground,severe trauma,Discharged from Hospital,168,Distress non cororienne,major,Douleur non cororienne
+17,136,T,Ground,severe trauma,Hospitalise,170,Polytraumatise,major,Polytraumatise
+25,105,T,Ground,acute coronary syndrome,Discharged from Hospital,171,SCA non ST+,major,SCA non ST+
+26,106,T,Ground,acute coronary syndrome,Discharged from Hospital,172,SCA non ST+,major,SCA non ST+
+29,124,T,Ground,severe trauma,Discharged from Hospital,173,Polytraumatise,major,Polytraumatise
+29,104,T,Ground,severe trauma,Discharged from Hospital,174,Polytraumatise,major,Polytraumatise
+29,106,T,Ground,severe trauma,Discharged from Hospital,175,Polytraumatise,major,Polytraumatise
+29,104,T,Ground,severe trauma,Discharged from Hospital,176,Polytraumatise,major,Polytraumatise
+15,92,T,Ground,acute coronary syndrome,Discharged from Hospital,177,SCA ST+,major,SCA ST+
+17,78,T,Ground,other,Hospitalise,178,AIT ,Other,AIT 
+72,145,T,Ground,strokes,Rehospitalise,179,AVC,major,AVC
+18,108,T,Ground,acute coronary syndrome,Rehospitalise,180,SCA non ST+,major,SCA non ST+
+14,79,T,Ground,acute coronary syndrome,Rehospitalise,181,SCA ST+,major,SCA ST+
+41,108,T,Ground,acute coronary syndrome,Discharged from Hospital,182,SCA non ST+,major,SCA non ST+
+41,108,T,Ground,acute coronary syndrome,Discharged from Hospital,182,SCA non ST+,major,SCA non ST+
+18,89,T,Ground,acute coronary syndrome,Discharged from Hospital,184,SCA non ST+,major,SCA non ST+
+23,90,T,Ground,acute coronary syndrome,Discharged from Hospital,185,SCA non ST+,major,SCA non ST+
+27,99,T,Ground,acute coronary syndrome,Discharged from Hospital,187,SCA non ST+,major,SCA non ST+
+25,74,T,Ground,severe trauma,Discharged from Hospital,188,Distress non cororienne,major,Douleur non cororienne
+22,87,T,Ground,acute coronary syndrome,Discharged from Hospital,189,SCA non ST+,major,SCA non ST+
+34,106,T,Ground,severe trauma,Discharged from Hospital,190,Polytraumatise,major,Polytraumatise
+34,106,T,Ground,severe trauma,Discharged from Hospital,191,Polytraumatise,major,Polytraumatise
+34,106,T,Ground,severe trauma,Discharged from Hospital,192,Polytraumatise,major,Polytraumatise
+45,143,T,Ground,acute coronary syndrome,Discharged from Hospital,193,SCA non ST+,major,SCA non ST+
+19,88,T,Ground,acute coronary syndrome,Discharged from Hospital,194,SCA non ST+,major,SCA non ST+
+29,130,T,Ground,severe trauma,Discharged from Hospital,195,Polytraumatise,major,Polytraumatise
+31,63,T,Ground,acute coronary syndrome,Discharged from Hospital,197,SCA non ST+,major,SCA non ST+
+21,88,T,Ground,acute coronary syndrome,Hospitalise,198,SCA ST+,major,SCA ST+
+34,89,T,Ground,acute coronary syndrome,Discharged from Hospital,199,SCA non ST+,major,SCA non ST+
+25,143,T,Ground,severe trauma,,200,Fracture ouverte femur droit isolee,Other,Fracture ouverte femur droit isolee
+20,89,T,Ground,acute coronary syndrome,Discharged from Hospital,201,SCA non ST+,major,SCA non ST+
+24,70,T,Ground,acute coronary syndrome,Discharged from Hospital,202,DT atypique  ,major,DT atypique  
+36,72,T,Ground,severe trauma,Discharged from Hospital,204,Traumatisme peripherique,Other,Traumatisme peripherique
+15,78,T,Ground,acute coronary syndrome,Hospitalise,205,SCA non ST+,major,SCA non ST+
+20,63,T,Ground,severe trauma,Discharged from Hospital,206,Distress non cororienne,major,Douleur non cororienne
+22,86,T,Ground,acute coronary syndrome,Discharged from Hospital,207,SCA non ST+,major,SCA non ST+
+15,88,T,Ground,strokes,Rehospitalise,208,angor  ,Other,angor  
+39,136,T,Ground,acute coronary syndrome,hospitalise en SSR,209,SCA non ST+,major,SCA non ST+
+27,100,T,Ground,acute coronary syndrome,Discharged from Hospital,210,Other ST+,major,ACR sur SCA ST+
+21,102,T,Ground,acute coronary syndrome,reeducation CV,211,SCA ST+,major,SCA ST+
+34,73,T,Ground,severe trauma,Discharged from Hospital,212,Polytraumatise,major,Polytraumatise
+22,85,T,Ground,acute coronary syndrome,Discharged from Hospital,213,DT atypique  ,major,DT atypique  
+34,98,T,Ground,acute coronary syndrome,Rehospitalise,214,SCA non ST+,major,SCA non ST+
+31,112,T,Ground,acute coronary syndrome,Discharged from Hospital,215,SCA non ST+,major,SCA non ST+
+41,95,T,Ground,acute coronary syndrome,Discharged from Hospital,216,SCA non ST+,major,SCA non ST+
+21,68,T,Ground,strokes,Discharged from Hospital,217,AVC,major,AVC
+18,44,T,Ground,strokes,Discharged from Hospital,217,AVC,major,AVC
+22,85,T,Ground,acute coronary syndrome,Discharged from Hospital,218,SCA non ST+,major,SCA non ST+
+34,96,T,Ground,acute coronary syndrome,Discharged from Hospital,221,SCA non ST+,major,SCA non ST+
+26,116,T,Ground,acute coronary syndrome,Rehospitalise,222,SCA non ST+,major,SCA non ST+
+22,91,T,Ground,acute coronary syndrome,Rehospitalise,223,SCA ST+,major,SCA ST+
+33,58,T,Ground,acute coronary syndrome,Discharged from Hospital,224,SCA non ST+,major,SCA non ST+
+31,43,T,Ground,acute coronary syndrome,Discharged from Hospital,225,DT atypique  ,major,DT atypique  
+41,96,T,Ground,acute coronary syndrome,Discharged from Hospital,226,SCA non ST+,major,SCA non ST+
+27,75,T,Ground,other,Discharged from Hospital,227,Malaise sans PCI,Other,Malaise sans PCI
+32,128,T,Ground,acute coronary syndrome,Rehospitalise,228,DT atypique  ,major,DT atypique  
+25,80,T,Ground,severe trauma,Decreased,229,Detresse Respiratoire Aigue,Other,Detresse Respiratoire Aigue
+41,90,T,Ground,acute coronary syndrome,Discharged from Hospital,230,DT atypique  ,major,DT atypique  
+27,106,T,Ground,strokes,Discharged from Hospital,231,AVC,major,AVC
+15,84,T,Ground,acute coronary syndrome,Discharged from Hospital,232,SCA non ST+,major,SCA non ST+
+38,97,T,Ground,severe trauma,Discharged from Hospital,233,Polytraumatise,major,Polytraumatise
+16,105,T,Ground,acute coronary syndrome,Discharged from Hospital,234,SCA non ST+,major,SCA non ST+
+31,87,T,Ground,acute coronary syndrome,Discharged from Hospital,235,SCA non ST+,major,SCA non ST+
+26,80,T,Ground,acute coronary syndrome,reeducation CV,236,SCA non ST+,major,SCA non ST+
+62,149,T,Ground,acute coronary syndrome,Discharged from Hospital,237,SCA non ST+,major,SCA non ST+
+33,88,T,Ground,acute coronary syndrome,Decreased,238,SCA ST+,major,SCA ST+
+29,110,T,Ground,other,Discharged from Hospital,239,TJ,Other,TJ
+58,199,T,Ground,acute coronary syndrome,Decreased,240,Choc cardiogenique et ACR,Other,Choc cardiogenique et ACR
+20,114,T,Ground,acute coronary syndrome,Discharged from Hospital,241,SCA non ST+,major,SCA non ST+
+48,109,T,Ground,acute coronary syndrome,Discharged from Hospital,242,SCA ST+,major,SCA ST+
+23,95,T,Ground,acute coronary syndrome,Discharged from Hospital,243,SCA ST+,major,SCA ST+
+23,77,T,Ground,acute coronary syndrome,Discharged from Hospital,244,SCA non ST+,major,SCA non ST+
+27,98,T,Ground,severe trauma,Discharged from Hospital,245,Polytraumatise,major,Polytraumatise
+32,79,T,Ground,severe trauma,Discharged from Hospital,246,Polytraumatise,major,Polytraumatise
+27,116,T,Ground,acute coronary syndrome,Discharged from Hospital,247,SCA non ST+,major,SCA non ST+
+34,97,T,Ground,acute coronary syndrome,Discharged from Hospital,248,SCA non ST+,major,SCA non ST+
+35,101,T,Ground,acute coronary syndrome,Discharged from Hospital,249,SCA non ST+,major,SCA non ST+
+45,149,T,Ground,acute coronary syndrome,Discharged from Hospital,250,SCA non ST+,major,SCA non ST+
+22,89,T,Ground,acute coronary syndrome,Discharged from Hospital,251,DT atypique  ,major,DT atypique  

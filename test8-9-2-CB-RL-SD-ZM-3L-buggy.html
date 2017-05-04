@@ -1,0 +1,829 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Evaluate Outliners  - Sensitivity Test</title>
+    <link rel="stylesheet" href="css/hellocss.css">
+  </head>
+  <body>
+    <h2>Helicopters or Ground Emergency Services</h2>
+    <p>Hover over a datapoint to see more details. Use mousewheel to zoom. </p>
+    <h4>Click on a datapoint to remove it </h4>
+    <h3></h3>  <div id="chart"><!--- chart area --></div>
+    <h5></h5>  <div id="button"><!--- button area --></div>
+    <h6></h6>  
+      <div id="footnote"><!--- footnote area -->
+          <p align = "right">Data from <b>Service mobile d'urgence et de réanimation (SMUR)</b> in France</p>
+          <p align = "right"><b>Out-of-hospital time</b> is the duration from call centre receiving a request to the ambulance arrival at the hospital</p>
+          <p align = "right">Either a <b>helicoper (mode H)</b>, marked with a square on above chart, or a <b>ground transport (mode T)</b>, marked with a circle, is sent for each case.</p>
+      
+      </div>
+      
+    <div id="chart"></div>
+    <svg class="chart"></svg>
+    <script src="lib/d3.v3.min.js"></script>
+   <!--<script src="http://d3js.org/d3.v3.min.js"></script> ->
+   <!-- <script src="lib/d3-shape.v0.6.min.js"></script> -->
+    <script src="lib/d3-array.min.js"></script>  
+   <!-- <script src="lib/mahalanobis.min.js"></script>-->
+    <script src="lib/simple-statistics.min.js"></script>  
+
+    <script>
+    // Reference: https://matthewgladney.com/blog/data-science/no-nonsense-guide-getting-started-scatter-plots-d3-js-d3-csv/
+    // Global variables
+    var margin = {top: 20, right: 20, bottom: 30, left: 40},
+        width = 960 - margin.left - margin.right,
+        height = 600 - margin.top - margin.bottom;
+    var radius = 3.2
+    
+  // load external data
+    dataforCal = [];  
+    HdataforCal = [];  
+    TdataforCal = [];  
+        //note: D3 does not store data within variables. Instead, D3 stores data within the DOM selectors by calling the selection.data() method. other operations: append, enter()
+        // reference: https://website.education.wisc.edu/~swu28/d3t/concept.html
+    var removed_data_id = []; 
+    var restored_data_id = [];
+    var lastRemove = [];
+    var squares =[];  //inital length 121 after read csv
+    var circles =[];  //inital length 118 after read csv
+    var regLineData = [];
+    var trendline = [];
+    var diagnostic_smur_type = [];
+        
+        
+  // Start d3 csv which is asynchronized read, and need server running        
+     read = d3.csv("data/hellodata-6.csv", function(d) { // d is a common d3 variable for the data
+        return {
+          distance_km: +d.distance_km, // for the most part, you can build an object using dot notation and column header value
+          out_of_hospital_time_minute: +d.out_of_hospital_time_minute, // you can convert types through a variety of ways. The '+' converts a string to a number
+          mode: d["mode"], // you can also use the bracket notation if the header values are funky
+          mode_long: d.mode_long,
+          diagnostic_smur: d.diagnostic_smur,
+          outcome_28day: d.outcome_28day,
+          id: d.id   
+            
+        };
+    }, function(error, data) { // ##### BEGIN function inside read ds.csv   #####
+        // *** setup scale *****       
+//            console.log(data[0]);
+            var xVals = function(d){return d.distance_km;};
+            var yVals = function(d){return d.out_of_hospital_time_minute;};   
+            
+            var x = d3.scale.linear()
+                .range([0, width]).nice();
+
+            var y = d3.scale.linear()
+                .range([height, 0]).nice();
+            
+            var zoomfactor = 1;
+//            console.log(data[0].distance_km);
+//            console.log(data[0].outcome_28day);
+//            console.log(data.length);
+            dataforCal = data;
+            HdataforCal = dataforCal.filter(function(e) { return e.mode == "H"});
+            TdataforCal = dataforCal.filter(function(e) { return e.mode == "T"});
+            
+           var maxDistance = 0;
+         
+          // I attempt to calculate the mahalanobis distance using x (distance_km) and y (out_of_hospital_time_minute) only; I need to store this mahalanobis distance(x,y) at the point.  (line 86-89)
+         // example
+         // is zip the right function to do so?  and could I use xVals and vVals (which returns object)
+//          mahalanobis(zip(xVals, yVals)).forEach(function(d, i){  // giving error
+//            if (d > maxDistance) maxDistance = d;
+//            points[i].push(d);
+//         });
+        // update scales
+            var xScale = d3.scale.linear().range([0, width]);
+            var xAxis = d3.svg.axis().scale(xScale).orient("bottom");
+            var xMap = function(d) { return xScale(xVals(d));};
+
+            var yScale = d3.scale.linear().range([height, 0]);
+            var yAxis = d3.svg.axis().scale(yScale).orient("left");
+            var yMap = function(d) { return yScale(yVals(d));};
+            //        
+           // xScale.domain([d3.min(data, xVals)-1, d3.max(data, xVals)+1]);
+            //yScale.domain([d3.min(data, yVals)-1, d3.max(data, yVals)+1]);
+        
+            xScale.domain([d3.min(data, xVals)-1, (d3.max(data, xVals)+1)/zoomfactor]);
+           // yScale.domain([d3.min(data, yVals)-1, (d3.max(data, yVals)+1)/zoomfactor]);
+            yScale.domain([0, (d3.max(data, yVals)+1)/zoomfactor]);
+        
+        // *** : Create SVG element, axes, tooltip area  ****
+
+        //attempt zoom; drag and zoom code adopted from https://bl.ocks.org/mbostock/6123708, which is released under the GNU General Public License, version 3.
+            var zoom = d3.behavior.zoom()
+                .scaleExtent([1, 5])
+                  .x(x)
+                  .y(y)
+               // .on("zoom", zoomed);
+                  .on("zoom", function() {
+          // the "zoom" event populates d3.event with an object that has
+          // a "translate" property (a 2-element Array in the form [x, y])
+                  // and a numeric "scale" property
+                      var e = d3.event,
+                          // now, constrain the x and y components of the translation by the
+                          // dimensions of the viewport
+                          tx = Math.min(0, Math.max(e.translate[0], width - width * e.scale)),
+                          ty = Math.min(0, Math.max(e.translate[1], height - height * e.scale));
+                      // then, update the zoom behavior's internal translation, so that
+                      // it knows how to properly manipulate it on the next movement
+                      zoom.translate([tx, ty]);
+                      // and finally, update the <g> element's transform attribute with the
+                      // correct translation and scale (in reverse order)
+                      container.attr("transform", [
+                        "translate(" + [tx, ty] + ")",
+                        "scale(" + e.scale + ")"
+                      ].join(" "));
+
+                    // Redraw the Axis
+                    container.select("g.x.axis").call(xAxis);
+                    container.select("g.y.axis").call(yAxis);
+//                      svg.select(".x.axis").call(xAxis);
+//                      svg.select(".y.axis").call(yAxis);
+            });
+         
+//            container.select(".x.axis").call(xAxis);
+//            container.select(".y.axis").call(yAxis);
+
+            var drag = d3.behavior.drag()
+                .origin(function(d) { return d; })
+                .on("dragstart", dragstarted)
+                .on("drag", dragged)
+                .on("dragend", dragended); 
+        
+            //var svg = d3.select("body")
+            var svg = d3.select("H3")
+                .append("svg")
+                .attr("width", width + margin.left + margin.right)
+                .attr("height", height + margin.top + margin.bottom)
+              .append("g")
+                .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
+                .call(zoom)
+               // .call(zoomBeh)
+                ;
+            var rect = svg.append("rect")  //for zoom/drag
+                .attr("width", width)
+                .attr("height", height)
+                .style("fill", "none")
+                .style("pointer-events", "all");
+        
+            var container = svg.append("g"); //for zoom/drag: note: only the data point, the line, the axes are inside the container. legend and buttons stay
+        
+           // update x-axis
+           //svg.append("g")
+            container.append("g")
+              .attr("class", "x axis")
+              .attr("transform", "translate(0," + height + ")")
+              .call(xAxis)
+           .append("text")
+              .classed("label", true)
+              .attr("class", "label")
+              .attr("x", width)
+              .attr("y", -6)
+              .style("text-anchor", "end")
+              .text("Distance: from patient's site to hospital (km)");
+
+           // update y-axis
+           //svg.append("g")
+            container.append("g")
+              .attr("class", "y axis")
+              .call(yAxis)
+           .append("text")
+              .classed("label", true)
+              .attr("class", "label")
+              .attr("transform", "rotate(-90)")
+              .attr("y", 6)
+              .attr("dy", ".71em")
+              .style("text-anchor", "end")
+              .text("Time: from first-contact to arrival (mins)");
+        
+
+            // 
+            // ***** BEGIN draw regression line  (overall)
+            regLineData = calculateRegression(dataforCal);
+//            console.log("regLineData" + regLineData);
+//            console.log(regLineData[0,0] + regLineData[1,1]);
+            var lineFunction = d3.svg.line()    //the accessor function / path generator
+                .x(function(d) { return xScale(d.x); })
+                .y(function(d) { return yScale(d.y); })
+                .interpolate("linear");
+        
+            //svg.selectAll('path.line')
+            var line = container.selectAll('path.line')
+                .data(regLineData)
+                .enter()
+                .append("svg:path")
+                .attr("d", lineFunction(regLineData)) 
+                .attr("class", "line")
+                .attr("stroke-width", 2)
+                .style("stroke-dasharray", ("6, 1"))
+                .style("stroke", "#ccc")
+                .attr('id', 'regLine')
+                .on("mouseover", function(d) {   //BEGIN mouseover on H
+                        // Show Tooltip on mouseOver
+                         tooltip.transition()
+                            .duration(200)
+                            .style("opacity", .8);
+                         tooltip.html("global trend line")
+                            .style("left", (d3.event.pageX + 5) + "px")
+                            .style("top", (d3.event.pageY - 28) + "px");
+                            })  // END mouseover
+                 .on("mouseout", function(d) {
+                     d3.select(this).attr('stroke-width',1)
+                     tooltip.transition()
+                        .duration(500)
+                        .style("opacity", 0);
+                     //tooltip.remove();
+                  }) 
+                ;
+   
+         
+            // END   draw regression line  (overall)
+         
+             // ***** BEGIN draw regression line-H        
+            HregLineData = calculateRegression(HdataforCal);
+            var HlineFunction = d3.svg.line()    //the accessor function / path generator
+                .x(function(d) { return xScale(d.x); })
+                .y(function(d) { return yScale(d.y); })
+                .interpolate("linear");
+        
+            //svg.selectAll('path.line')
+            container.selectAll('path.Hline')
+                .data(HregLineData)
+                .enter()
+                .append("svg:path")
+                .attr("d", HlineFunction(HregLineData)) 
+                .attr("class", "line")
+                .attr("stroke-width", 2)
+                .style("stroke", "#ddd")
+                .style("stroke-dasharray", ("2, 2"))
+                .attr('id', 'HregLine'); 
+            // END   draw regression line - H   
+         
+            // ***** BEGIN draw regression line-T        
+            TregLineData = calculateRegression(TdataforCal);
+            var TlineFunction = d3.svg.line()    //the accessor function / path generator
+                .x(function(d) { return xScale(d.x); })
+                .y(function(d) { return yScale(d.y); })
+                .interpolate("linear");
+        
+            //svg.selectAll('path.line')
+            container.selectAll('path.Tline')
+                .data(TregLineData)
+                .enter()
+                .append("svg:path")
+                .attr("d", TlineFunction(TregLineData)) 
+                .attr("class", "line")
+                .attr("stroke-width", 2)
+                .style("stroke", "#eee")
+                .attr('id', 'TregLine'); 
+            // END   draw regression line - T   
+           
+            function calculateRegression (my_dataforCal){
+                // Need to calculate the regression before
+                var m = 1;
+                var b = 0; 
+//                console.log("calculate regression" + my_dataforCal.length);
+                var regression = ss.linearRegression(my_dataforCal.map(function(d) {
+                    return [+d.distance_km, +d.out_of_hospital_time_minute];
+                }));  // output scole (m) and y -intercept (b)
+                m = regression["m"];
+                b = regression["b"];
+    //            var yHats = function(d){return xVals * m + b;};  //not used
+
+                var xMax = d3.max(my_dataforCal, xVals);
+                var yhMax = xMax * m +b ;
+                var xMin = d3.min(my_dataforCal, xVals);
+                // var xMin = 100;
+                var yhMin = xMin * m +b ;
+                my_regLineData =  [ 
+                    { "x": xMin,   "y": yhMin}, 
+                    { "x": xMax,   "y": yhMax}, 
+                    ];
+                return my_regLineData;
+            }
+        
+            // Add Tooltip area to webpage
+            //  var tooltip = d3.select("body").append("div")
+            var tooltip = d3.select("H3").append("div")
+                .attr("class", "tooltip")
+                .style("opacity", 0)
+                .style("background-color", "#FFDFE0");
+        
+           //**** setup fill color  and category ****
+//            var cValue = function(d) { return d["mode"];},
+//               color = d3.scale.category20();
+        
+          // Shape Scale according to Mode(H/T) and Color according to Diagnostic SMUR
+          // scale & color reference: https://bl.ocks.org/starcalibre/f4b8bb0da3b2090c56d79646a338fd81
+            var mode_type = d3.set(data.map(function(d) {
+                    return d.mode;
+                })).values();    
+//            console.log("#"+mode_type[0]);  //H
+//            console.log("#"+mode_type[1]);  //T
+        
+            diagnostic_smur_type = d3.set(data.map(function(d) {
+                return d.diagnostic_smur;
+                })).values();  
+          
+            var smur_type_count = d3.nest()
+                    .key(function(d) { return d.diagnostic_smur; })
+                    .rollup(function(a){return a.length;})
+                    .entries(data)
+                    .sort(function(a, b){ return d3.ascending(a.values, b.values); })
+            console.log(JSON.stringify(smur_type_count));
+//        
+//            Array.prototype.byCount= function(){
+//                var itm, a= [], L= this.length, o= {};
+//                for(var i= 0; i<L; i++){
+//                    itm= this[i];
+//                    if(!itm) continue;
+//                    if(o[itm]== undefined) o[itm]= 1;
+//                    else ++o[itm];
+//                }
+//                for(var p in o) a[a.length]= p;
+//                return a.sort(function(a, b){
+//                    return o[b]-o[a];
+//                });
+//            }
+        
+//        // not used  shapeScale
+//        var shapeScale = d3.scale.ordinal()
+//                .domain(mode_type)
+////                .range([d3_shape.symbolCircle, d3_shape.symbolCross,
+////                    d3_shape.symbolSquare]);
+//                 .range([d3_shape.symbolCross,
+//                    d3_shape.symbolSquare]);
+        
+            var cValue = function(d) { return d["diagnostic_smur"];},   // d3 does color magics
+               color = d3.scale.category20();
+        
+          // **** Setup Shape (Two parts: rect & circle) ****
+          //   Shape Part 1: square  (rect) for H
+          // different shape reference: https://stackoverflow.com/questions/20335118/filter-data-in-d3-to-draw-either-circle-or-square
+          //  var shapes =    svg.selectAll(".dots")    //binding shape to data
+             var shapes =    container.selectAll(".dots")    //binding shape to data
+                //  .data(data).enter();
+                .data(dataforCal).enter();
+                //.data(data.filter(function(d){ return (d.mode == "H") }))               .enter().append("rect")
+
+            var refreshSquares = addSquare_for_H(shapes, mode_type, radius, xMap, yMap, data);
+            var refreshCircles = addCircles_for_T( shapes, mode_type, radius, xMap, yMap, data);
+           // circles.attr("groupid", "GroupT");
+        
+            //addSquare_for_H(d);
+            //Begin  function addSquare_for_H
+            //function addSquare_for_H( shapes, mode_type, radius, xMap, yMap, data) {
+            function addSquare_for_H(myData) {
+            //function addSquare_for_H(d) {
+                // Start Square for Mode H
+                var squares = shapes.append("rect")
+                    .filter(function(d){ return (d.mode == mode_type[0]) }) //H
+                    //  .attr("id", mode_type[0])
+                      .attr("groupid", "H") 
+                      .attr("id", function(d) { return d.diagnostic_smur})
+                       .attr("width", radius*2)
+                       .attr("height", radius*2)
+                      .attr("x", xMap)
+                      .attr("y", yMap)
+                      .style("fill", function(d) { return color(cValue(d));})//if commnented  Now all H are black
+                        .style("opacity", .7)                        
+                     .on("mouseover", function(d) {   //BEGIN mouseover on H
+                            // Use D3 to select element, change color and size
+                            d3.select(this).attr({
+                             // fill: "orange", orange appears after set opacity =0!
+                              "width": radius * 3,
+                              "height": radius * 3,
+                             // "stroke-width": 3
+                            });
+                            // Show Tooltip on mouseOver
+                             tooltip.transition()
+                                .duration(200)
+                                .style("opacity", .8);
+                             tooltip.html( "D: <b>" + d.distance_km + "</b> T:<b>" + d.out_of_hospital_time_minute + 
+                                          "</b><br/><b>" + d.mode_long + "</b><br/> SMUR for:" + d.diagnostic_smur 
+                                          + "<br/> Outcome: <b>" + d.outcome_28day)
+                                .style("left", (d3.event.pageX + 5) + "px")
+                                .style("top", (d3.event.pageY - 28) + "px");
+                                })  // END mouseover
+                     .on("mouseout", function(d) {
+                            d3.select(this).attr({
+                             // fill: "orange", orange appears after set opacity =0!
+                              "width": radius * 2,
+                              "height": radius * 2,
+                             // "stroke-width": 3
+                            });
+                         tooltip.transition()
+                            .duration(500)
+                            .style("opacity", 0);
+                         //tooltip.remove();
+                      }) 
+                     .on("click",function(d) {  // this is H set
+                          // use confirm instead of alert
+                          confirm("You double-click a data point. \n This action will hide this data point (ID #" + d.id + ")\n\n" +
+                                "Transport mode: " + d.mode_long + "\n SMUR for:" + d.diagnostic_smur 
+                                          + "\n 28D: " + d.outcome_28day);
+                          d3.select(this).attr({
+                             // style: ("opacity", 0),   // making the selected shape transparent and white
+                              style: ("opacity", 1), 
+                              fill: "#FFFFFF"                     
+                          });
+                         d3.select(this).active = 0;    
+                        // console.log("before" + data.length + " " + removed_data.length);
+                       //  dataforCal, lastRemove, removed_data = removeData(dataforCal, d.id);
+                         removed_data_id.push(removeData(dataforCal, d.id));
+                        // HremoveData();
+                        //    data = removeData(data, d.id);
+                         console.log("last remove[0] H Set" + lastRemove);
+                         console.log(removed_data_id);
+                        // console.log("after" + data.length + " " + removed_data.length);
+                         d3.select(this).remove(); // remove from D3 selection (.data and visual)
+                         tooltip.transition()
+                            .duration(500)
+                            .style("opacity", 0);
+                         //updateChart(dataforCal);
+                         updateChart(HdataforCal, "path#HregLine");
+                         //tooltip.remove();
+                     }) // end on click // end Square for mode H
+                return lastRemove, lastRemove.id, data, squares;
+            }//END function addSquare_for_H
+    
+            // Shape Part 2: square  (circle) for T
+            //function addCircles_for_T( shapes, mode_type, radius, xMap, yMap, data) {
+            function addCircles_for_T(myData) {                
+                    var circles = shapes.append("circle")
+    //                .filter(function(d){ return (d.mode != "H") })
+                      .filter(function(d){ return (d.mode != mode_type[0]) })  //mode_type[1] == T
+                     // .attr("id", mode_type[1])
+                      .attr("groupid", "T")
+                      .attr("id", function(d) { return d.diagnostic_smur})
+                     .attr("r", radius)
+                      .attr("cx", xMap)
+                      .attr("cy", yMap)
+                      .style("fill", function(d) { return color(cValue(d));})
+                        .style("opacity", .7)
+                       .on("mouseover", function(d) {   //BEGIN mouseover on T
+                            // Use D3 to select element, change color and size
+                            d3.select(this).attr({
+                             // fill: "orange",
+                              r: radius * 1.5
+                            });
+                            // Show Tooltip on mouseOver
+                             tooltip.transition()
+                                .duration(200)
+                                .style("opacity", 1);
+                             tooltip.html( "D: <b>" + d.distance_km + "</b> T:<b>" + d.out_of_hospital_time_minute + 
+                                          "</b><br/><b>" + d.mode_long + "</b><br/> SMUR for:" + d.diagnostic_smur 
+                                          + "<br/> Outcome: <b>" + d.outcome_28day)
+                                .style("left", (d3.event.pageX + 5) + "px")
+                                .style("top", (d3.event.pageY - 28) + "px");
+                                })  // END mouseover T
+                     .on("mouseout", function(d) {
+                         d3.select(this).attr({
+                             // fill: "orange",
+                              r: radius
+                            });
+                         tooltip.transition()
+                            .duration(500)
+                            .style("opacity", 0);
+                         //tooltip.remove();
+                      }) 
+                     .on("click",function(d) {  //remove on click  (T set)
+                          confirm("You double-click a data point. \n This action will hide this data point (#" + d.id + ")\n\n" +
+                                "Transport mode: " + d.mode_long + "\n SMUR for:" + d.diagnostic_smur 
+                                          + "\n 28D: " + d.outcome_28day);
+                          d3.select(this).attr({          // making the selected shape transparent/opague and white
+                            //  style: ("opacity", 0),
+                              style: ("opacity", 1),
+                              fill: "#FFFFFF"
+
+                          });
+                          d3.select(this).active = 0;
+                         //console.log("before" + data.length + " " + removed_data.length);
+                       //  dataforCal, lastRemove, removed_data = removeData(dataforCal, d.id);
+                       // dataforCal, lastRemove, removed_data = removeData(dataforCal, d.id);
+                        removed_data_id.push(removeData(dataforCal, d.id));
+                        //TremoveData();
+                        // console.log("after" + data.length + " " + removed_data.length);
+                         console.log("lastRemove[0] T set" + lastRemove);
+                         console.log(removed_data_id);
+                         d3.select(this).remove();   // remove from D3 selection (.data and visual)
+                         tooltip.transition()
+                            .duration(500)
+                            .style("opacity", 0);
+//                         updateChart(dataforCal);
+                         updateChart(TdataforCal, "path#TregLine");
+                         //tooltip.remove();  // this remove all tooltips
+                     }) // end on click   //  // end Circles for mode T
+                return lastRemove, lastRemove.id, data, circles;  // lastRemove, lastRemove.id is available on console
+            }//END function addSquare_for_H
+        
+            // *** BEGIN function removeData  ****
+            function removeData(data, id) {
+                dataforCal = dataforCal.filter(function(e) { return e.id !== id });
+                HdataforCal = HdataforCal.filter(function(e) { return e.id !== id });
+                TdataforCal = TdataforCal.filter(function(e) { return e.id !== id });
+                //removed_data.push(data.filter(function(e) { return e.id == id }));
+                lastRemove = data.filter(function(e) { return e.id == id });  //there is something extra
+                //lastRemove = dataforCal.filter(function(e) { return e.id == id });//length undefined
+                lastRemove = lastRemove[0];  //lastRemove is orignally two-element object - I want the first one only - to pass for undo
+//                console.log("last remove" + lastRemove);
+                return id;
+               
+            };  //END function removeData
+ 
+            // *** BEGIN function HremoveData  ****
+            function HremoveData(data, id) {
+                HdataforCal = HdataforCal.filter(function(e) { return e.id !== id });
+                console.log("Hdata" + HdataforCal.length);
+                //removed_data.push(data.filter(function(e) { return e.id == id }));
+//                lastRemove = data.filter(function(e) { return e.id == id });
+//                //lastRemove = dataforCal.filter(function(e) { return e.id == id });
+//                lastRemove = lastRemove[0];
+////                removed_data.push(lastRemove);//removed_data.push is not a function
+//                console.log(lastRemove);
+              //  removed_data.appendChild(lastRemove);        // push, append not working        
+                return HdataforCal, lastRemove, removed_data;
+               
+            };  //END function HremoveData         
+         
+            // *** BEGIN function TremoveData  ****
+            function TremoveData(data, id) {
+                TdataforCal = TdataforCal.filter(function(e) { return e.id !== id });
+                console.log("Tdata" + TdataforCal.length);
+                //removed_data.push(data.filter(function(e) { return e.id == id }));
+//                lastRemove = data.filter(function(e) { return e.id == id });
+//                //lastRemove = dataforCal.filter(function(e) { return e.id == id });
+//                lastRemove = lastRemove[0];
+//                removed_data.push(lastRemove);//removed_data.push is not a function
+                console.log(lastRemove);
+              //  removed_data.appendChild(lastRemove);        // push, append not working        
+                return TdataforCal, lastRemove, removed_data;
+               
+            };  //END function TremoveData           
+         
+         
+         
+         
+
+         //  *** onClick Restore datapoint ****
+         //button to swap over datasets
+            d3.select("H5").append("button")
+                .text("Undo last datapoint removal")
+                .attr("float", "left")
+                .on("click",function(){
+                    //select new data
+//                    if (dataIndex==1) {
+//                        dataIndex=2;  
+//                    } else   {
+//                        dataIndex=1;
+//                    }
+                    //rejoin data
+//                    var shapes =    svg.selectAll(".dots")    //binding shape to data
+//                        .data(data).enter();
+//                    var circle = svgDoc.select("g").selectAll("circle")
+//                        .data(eval("dataArray"+dataIndex));
+                    svg.selectAll('.dots')
+                        .data(lastRemove).enter();  // too many entered
+                    if (lastRemove.length !=[] ){ 
+                            alert("going to restore data point (ID #" + lastRemove.id + ")\n\n" +
+                                "Transport mode: " + lastRemove.mode_long + "\n SMUR for:" + lastRemove.diagnostic_smur 
+                                          + "\n 28D: " + lastRemove.outcome_28day)
+                        if (lastRemove.mode =="H") { 
+                               addSquare_for_H(lastRemove)
+                               shapes.append("squares")
+                               .transition().duration(100) 
+            //                .filter(function(d){ return (d.mode != "H") })
+                             // .datum("d": lastRemove)  //mode_type[1] == T
+                              .attr("id", mode_type[1])
+                              .attr("groupid", "GroupH")
+                              .attr("smur_type", function(d) { return lastRemove.diagnostic_smur})
+                              .attr("r", radius)
+                              .attr("cx", xScale(lastRemove.distance_km))
+                              .attr("cy", yScale(lastRemove.out_of_hospital_time_minute))
+                              .style("fill", function(d) { return color(cValue(d));})
+                              console.log("On undo clicked a H :before" + dataforCal.length);
+                              dataforCal.push(lastRemove);
+                              HdataforCal.push(lastRemove);
+                              console.log("after " + dataforCal.length + " H " + HdataforCal.length);
+                              console.log("original #" + data.length);
+                              //if (lastRemove != [])
+                              lastRemove = [];
+                        //      updateChart(dataforCal);
+                         updateChart(HdataforCal, "path#HregLine");
+                        
+                        } else { //T 
+                               // alert("T")
+                               addCircles_for_T(lastRemove)
+                               shapes.append("circle")
+                               .transition().duration(100) 
+            //                .filter(function(d){ return (d.mode != "H") })
+                             // .datum("d": lastRemove)  //mode_type[1] == T
+                              .attr("id", mode_type[1])
+                              .attr("groupid", "GroupT")
+                              .attr("smur_type", function(d) { return lastRemove.diagnostic_smur})
+                              .attr("r", radius)
+                              .attr("cx", xScale(lastRemove.distance_km))
+                              .attr("cy", yScale(lastRemove.out_of_hospital_time_minute))
+                              .style("fill", function(d) { return color(cValue(d));})
+                              console.log("On undo clicked a T: before" + dataforCal.length);
+                              dataforCal.push(lastRemove);
+                              TdataforCal.push(lastRemove);
+                              console.log("after " + dataforCal.length + " T " + HdataforCal.length);
+                              console.log("original #" + data.length);
+                              lastRemove = [];
+                            //  updateChart(dataforCal);
+                            updateChart(TdataforCal, "path#TregLine");
+                               }
+                    } else if (lastRemove.length == 0){alert("Sorry! No stored last removed datapoint")}
+                    else { alert("Sorry! No stored last removed datapoint")}
+                });//end click function
+
+                    
+//            // **** BEGIN function updateChart  *****
+//            // ***** task: redraw regression line
+            function updateChart(my_dataforCal, my_regLine){
+//                console.log("inside updateChart");    
+                //recalculate regLineData and values for the specific mode
+                my_regLineData = calculateRegression(my_dataforCal);
+                var my_lineFunction = d3.svg.line()    //the accessor function / path generator
+                    .x(function(d) { return xScale(d.x); })
+                    .y(function(d) { return yScale(d.y); })
+                    .interpolate("linear");
+                
+                //test with agressive regLineData
+//                regLineData =  [ 
+//                    { "x": 0,   "y": 99}, 
+//                    { "x": 300,   "y": 200}, 
+//                    ];
+                //redraw with new regLineData and values
+                svg.selectAll(my_regLine)
+                     .data(my_regLineData) // set the new data
+                     .attr("d", my_lineFunction(my_regLineData)); // apply the new data values
+
+
+                //recalculate global regLineData and values 
+                regLineData = calculateRegression(dataforCal);
+                var my_lineFunction = d3.svg.line()    //the accessor function / path generator
+                    .x(function(d) { return xScale(d.x); })
+                    .y(function(d) { return yScale(d.y); })
+                    .interpolate("linear");
+                
+                svg.selectAll("path#regLine")
+                     .data(regLineData) // set the new data
+                     .attr("d", lineFunction(regLineData)); // apply the new data values
+                
+               //
+                
+                //var lineData = svg.selectAll(".line").data([regLineData]); not working
+                //lineData.exit().remove(); //this does not remove the regression line
+                
+
+//                //shapes.attr("class", "update");
+        
+//                svg.append("svg:path")
+//                .attr("d", lineFunction(regLineData))
+//                    
+//                    .attr("stroke-width", 2)
+//                    .style("stroke", "#ccc")
+//                    .attr("class", "line")
+//                    .attr("stroke", "black")
+//                    .attr('id', 'regLine'); 
+            };  //END function updateChart   
+
+        // ***** legend ****
+//        
+//           
+//            // Add the mode H title
+//            svg.append("text")
+//                .attr("x", 0)             
+//                .attr("y", height + margin.top + 10)    
+//                .attr("class", "legend")
+//                .style("fill", "steelblue")         
+//                .on("click", function(){
+//                    // Determine if current line is visible
+//                    //var active   = H.active ? false : true,
+//                    var active   = GroupH.active ? false : true,
+//                    newOpacity = active ? 0 : 1;
+//                    // Hide or show the elements
+//                   // d3.select(".rect").style("opacity", newOpacity);
+//                    d3.select("GroupH").style("opacity", newOpacity);
+//                    // Update whether or not the elements are active
+//                    GroupH.active = active;
+//                })
+//                .text("   Mode Helcopter (H)   ");
+//        
+//            // Add the mode T title
+//            svg.append("text")
+//                .attr("x", 200)             
+//                .attr("y", height + margin.top + 10)    
+//                .attr("class", "legend")
+//                .style("fill", "red")         
+//                .on("click", function(){
+//                    // Determine if current line is visible
+//                    var active   = GroupT.active ? false : true,
+//                    newOpacity = active ? 0 : 1;
+//                    // Hide or show the elements
+//                    d3.select("#GroupT").style("opacity", newOpacity);
+//                  //  d3.select(".circles").style("opacity", newOpacity);
+//                    // Update whether or not the elements are active
+//                    GroupT.active = active;
+//                })
+//                .text("   Mode Ground (T)    ");
+//        
+                
+             // Begin create   (color scale one)
+             var legend = svg.selectAll(".legend")
+                  .data(color.domain()) //stores the color <-> label mappings
+                  .enter().append("g")
+                  .attr("class", "legend")
+                  //.units("Diagnostic SMUR") not working
+                  //.classed("legend", true)
+                  .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
+
+//
+//                  legend.append("circle")
+//                      .attr("x", width - 0)
+//                      .attr("r", 7)
+//                      .style("fill", color);
+                  legend.append("rect")
+                      .attr("x", width - 60)
+                      .attr("width", 15)
+                      .attr("height", 15)
+                      .style("fill", color);
+
+                  legend.append("text")
+                      .attr("x", width - 70)
+                      .attr("y", 9)
+                      .attr("dy", ".35em")
+                      .style("text-anchor", "end")
+                      .text(function(d) { return d;})
+                       .on("click", function(){                     // ************
+                        // Determine if current line is visible 
+                        console.log("click legend")
+                        var active   = d.active ? false : true,  // ************ 
+                        newOpacity = active ? 0 : 1;             // ************
+                        // Hide or show the elements based on the ID
+                        d3.select("#"+d.key.replace(/\s+/g, '')) // *********
+                            .transition().duration(100)          // ************
+                            .style("opacity", newOpacity);       // ************
+                        // Update whether or not the elements are active
+                        d.active = active;                       // ************
+                        });    
+        
+        
+//             svg.selectAll(".dots#circles")
+//                .data(dataforCal)
+//                    .style("fill", "green");
+          // end color scale legnend 
+        
+        //**trying zoom
+ 
+
+//            function zoomed() {
+//                // the "zoom" event populates d3.event with an object that has
+//              // a "translate" property (a 2-element Array in the form [x, y])
+//              // and a numeric "scale" property
+//              var e = d3.event,
+//                  // now, constrain the x and y components of the translation by the
+//                  // dimensions of the viewport
+//                  tx = Math.min(0, Math.max(e.translate[0], width - width * e.scale)),
+//                  ty = Math.min(0, Math.max(e.translate[1], height - height * e.scale));
+//              // then, update the zoom behavior's internal translation, so that
+//              // it knows how to properly manipulate it on the next movement
+//              zoom.translate([tx, ty]);
+//              // and finally, update the <g> element's transform attribute with the
+//              // correct translation and scale (in reverse order)                  
+//                  
+////              container.attr("transform", "translate(" + d3.event.translate + ")scale(" + d3.event.scale + ")");
+//                // and finally, update the <g> element's transform attribute with the
+//              // correct translation and scale (in reverse order)
+//              container.attr("transform", [
+//                "translate(" + [tx, ty] + ")",
+//                "scale(" + e.scale + ")"
+//              ].join(" "));
+//            }
+        
+            function dragstarted(d) {
+                  d3.event.sourceEvent.stopPropagation();
+                  d3.select(this).classed("dragging", true);
+                }
+        
+            function dragged(d) {
+              d3.select(this).attr("cx", d.x = d3.event.x).attr("cy", d.y = d3.event.y);
+            }
+            function dragended(d) {
+              d3.select(this).classed("dragging", false);
+            }
+            // end trying zoom
+        
+            });   // end function of d3 csv
+
+
+
+
+
+        
+      </script>
+  </body>
+</html>
