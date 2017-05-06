@@ -1,0 +1,124 @@
+/*set the axis line color, dot stroke, font size, and font position*/
+.grid-container{
+    width: 100%; 
+    max-width: 1200px;      
+}
+[class*='col-'] {
+  float: left;
+}
+.col-2-3 {
+  width: 66.66%;
+}
+.col-1-3 {
+  width: 33.33%;
+}
+.grid:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+body {
+  font: 11 px sans-serif;
+}
+H3 {
+  font: 11 px sans-serif;
+}
+H4 {
+  font: 11 px sans-serif;
+}
+H5 {
+  font: 11 px sans-serif;
+}
+H6 {
+  font: 11 px sans-serif;
+}
+.button{
+  font: 11 px sans-serif;
+}
+
+.name{
+  position: relative;
+  top: 90px;
+  text-align: left;
+  font-weight: bold;
+}
+
+.title {
+  position: relative;
+  text-align: left;
+  font-size: 25px;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.dot {
+  stroke: #000;
+}
+
+#filter {
+  position: absolute;
+}
+
+
+#mark {
+  padding-left: 150px;
+  position: inherit;
+}
+
+
+#xAXs {
+/*  position: relative;*/
+  position: absolute;
+  left: 290px;
+  bottom: 30px;
+}
+
+#yAXs {
+/*position: relative;*/
+position: absolute;    
+bottom: 30px;
+left: 315px;
+
+}
+
+#label {
+position: absolute;
+top: 550px;
+bottom: 125px;
+left: 300px;
+right: 0px;
+}
+
+#label2 {
+position: absolute;
+top: 550px;
+bottom: 125px;
+left: 520px;
+right: 0px;
+}
+
+/*.tooltip {
+  position: absolute;
+  width: 200px;
+  height: 60px;
+  pointer-events: none;
+}*/
+
+div.tooltip {   
+  position: absolute;           
+  text-align: center;           
+  width: 60px;                  
+  height: 60px;                 
+  padding: 2px;             
+  font: 12px sans-serif;        
+  background: lightsteelblue;   
+  border: 0px;      
+  border-radius: 8px;           
+  pointer-events: none;         
+}

@@ -1,0 +1,61 @@
+<!-- frame1.html -->
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Evaluate Outliners  - Sensitivity Test</title>
+    <link rel="stylesheet" href="css/hellocss.css">
+    <link rel="stylesheet" href="css/HT.css">
+<!--     <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/> -->
+  </head>
+  <body>
+    <div class="grid">
+      <div class="col-2-3">  <!-- Main Content -->
+          <h2>Helicopters or Ground Emergency Services</h2>
+          <h3></h3>  <div id="chart"><!--- chart area --></div>
+      </div>   <!--  end Main Content -->
+      <div class="col-1-3"><!-- Sidebar -->
+           
+        <p>Hover over a datapoint to see more details. Use mousewheel to zoom. </p>
+        <h5>Click on a datapoint to remove it  <div id="button"><!--- button area --> </div> </h5>       
+
+        <div id="filter">  <!-- on script.js d3.selectAll('select').on('change',function(){ -->
+            <b>Mode Filter:</b><br>
+            <input name='v' value="H" type="checkbox" checked>Helicopter          <br>
+            <input name="v" value="T" type="checkbox" checked >Ground Transport
+        </div>
+        <form id="mark">
+            <b>Color Scale</b>
+            <div><input type="radio" name="colorscale" value="mode" checked>Mode</div>
+            <div><input type="radio" name="colorscale" value="diagnostic_smur" >Diagnosis</div>
+        </form>
+
+      </div> <!-- end sidebar -->
+    </div> <!-- end grid -->
+
+
+     </div>
+    <h6></h6>        <div id="removeText"><!--- removeText area --></div>
+      <div id="footnote"><!--- footnote area -->
+          <p align = "right">Data from <b>Service mobile d'urgence et de réanimation (SMUR)</b> in France</p>
+          <p align = "right"><b>Out-of-hospital time</b> is the duration from call centre receiving a request to the ambulance arrival at the hospital</p>
+          <p align = "right">Either a <b>helicoper (mode H)</b>, marked with a square on above chart, or a <b>ground transport (mode T)</b>, marked with a circle, is sent for each case.</p>
+      
+      </div>
+      
+    <div id="chart"></div>
+    <svg class="chart"></svg>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="lib/d3.v3.min.js"></script>
+   <!--<script src="http://d3js.org/d3.v3.min.js"></script> ->
+   <!-- <script src="lib/d3-shape.v0.6.min.js"></script> -->
+    <script src="lib/d3-array.min.js"></script>  
+   <!-- <script src="lib/mahalanobis.min.js"></script>-->
+    <script src="lib/simple-statistics.min.js"></script>  
+<!--     <script src="http://code.jquery.com/jquery-1.8.3.min.js" type="text/javascript" charset="utf-8"></scrip -->t>
+<!--     <script type="text/javascript" src="js/materialize.min.js"></script> -->
+<!--     <script src="helper.js"></script> -->
+    <script src="main3.js"></script>    
+    <script>
+    </script>
+  </body>
+</html>
