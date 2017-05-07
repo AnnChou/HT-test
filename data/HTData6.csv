@@ -1,75 +1,97 @@
 ﻿distance_km,out_of_hospital_time_minute,mode,mode_long,diagnostic_smur,outcome_28day,pid
-38,63,H,Helicopter,acute coronary syndrome,aftercare & rehabilitation,17
-48,104,H,Helicopter,acute coronary syndrome,aftercare & rehabilitation,20
-88,80,H,Helicopter,strokes,aftercare & rehabilitation,21
-77,125,H,Helicopter,acute coronary syndrome,aftercare & rehabilitation,117
-85.1,103,H,Helicopter,strokes,decreased,3
-46,115,H,Helicopter,severe trauma,decreased,28
-24,136,H,Helicopter,severe trauma,decreased,31
-27,189,H,Helicopter,severe trauma,decreased,48
-41,57,H,Helicopter,acute coronary syndrome,decreased,53
-46,90,H,Helicopter,severe trauma,decreased,60
-56,93,H,Helicopter,acute coronary syndrome,decreased,77
-87,137,H,Helicopter,severe trauma,decreased,78
-85,176,H,Helicopter,strokes,decreased,81
-57,63,H,Helicopter,strokes,decreased,85
-41,139,H,Helicopter,severe trauma,decreased,86
-64,86,H,Helicopter,strokes,decreased,88
-61,159,H,Helicopter,acute coronary syndrome,decreased,96
-25,80,T,Ground,severe trauma,decreased,229
-33,88,T,Ground,acute coronary syndrome,decreased,238
-58,199,T,Ground,acute coronary syndrome,decreased,240
 76.3,127,H,Helicopter,acute coronary syndrome,discharged,1
 40.9,70,H,Helicopter,acute coronary syndrome,discharged,2
+85.1,103,H,Helicopter,strokes,decreased,3
 57.9,90,H,Helicopter,acute coronary syndrome,discharged,4
 50.4,88,H,Helicopter,acute coronary syndrome,discharged,5
 78.3,97,H,Helicopter,strokes,discharged,6
 74,86,H,Helicopter,acute coronary syndrome,discharged,7
 77,152,H,Helicopter,severe trauma,discharged,8
 69,141,H,Helicopter,acute coronary syndrome,discharged,9
+62,139,H,Helicopter,severe trauma,hospitalise,10
 57,115,H,Helicopter,severe trauma,discharged,11
 72,108,H,Helicopter,strokes,discharged,12
 72,99,H,Helicopter,strokes,discharged,13
 68,67,H,Helicopter,strokes,discharged,14
 38,84,H,Helicopter,acute coronary syndrome,discharged,15
 132,152,H,Helicopter,acute coronary syndrome,discharged,16
+38,63,H,Helicopter,acute coronary syndrome,aftercare & rehabilitation,17
 43,127,H,Helicopter,other tramua,discharged,18
 72,103,H,Helicopter,acute coronary syndrome,discharged,19
+48,104,H,Helicopter,acute coronary syndrome,aftercare & rehabilitation,20
+88,80,H,Helicopter,strokes,aftercare & rehabilitation,21
 88,153,H,Helicopter,strokes,discharged,22
+43,152,H,Helicopter,severe trauma,hospitalise,23
 45,188,H,Helicopter,severe trauma,discharged,24
+73,83,H,Helicopter,strokes,reeducation,25
+46,115,H,Helicopter,severe trauma,decreased,28
 102,114,H,Helicopter,severe trauma,discharged,29
 24,59,H,Helicopter,severe trauma,discharged,30
+24,136,H,Helicopter,severe trauma,decreased,31
 48,92,H,Helicopter,severe trauma,discharged,32
+39,266,H,Helicopter,severe trauma,hospitalise,33
+45,125,H,Helicopter,severe trauma,hospitalise,34
 52,78,H,Helicopter,acute coronary syndrome,discharged,35
 117,85,H,Helicopter,strokes,discharged,36
 62,98,H,Helicopter,acute coronary syndrome,discharged,37
 57,107,H,Helicopter,severe trauma,discharged,38
 46,161,H,Helicopter,acute coronary syndrome,discharged,39
 39,111,H,Helicopter,severe trauma,discharged,40
+24,35,H,Helicopter,severe trauma,unknown repatriation,41
 101,152,H,Helicopter,severe trauma,discharged,42
+58,154,H,Helicopter,severe trauma,hospitalise,43
 46,104,H,Helicopter,severe trauma,discharged,44
 60,131,H,Helicopter,acute coronary syndrome,discharged,45
+126,96,H,Helicopter,strokes,hospitalise,46
+38,93,H,Helicopter,severe trauma,hospitalise,47
+27,189,H,Helicopter,severe trauma,decreased,48
 61,97,H,Helicopter,acute coronary syndrome,discharged,49
 57,85,H,Helicopter,strokes,discharged,50
 45,152,H,Helicopter,acute coronary syndrome,discharged,51
+74,114,H,Helicopter,severe trauma,hospitalise,52
+41,57,H,Helicopter,acute coronary syndrome,decreased,53
 56,81,H,Helicopter,severe trauma,discharged,54
+108,122,H,Helicopter,strokes,hospitalise,55
+58,103,H,Helicopter,severe trauma,hospitalise,56
+24,78,H,Helicopter,severe trauma,family reconciliation,57
+42,170,H,Helicopter,severe trauma,reeducation,58
 68,85,H,Helicopter,acute coronary syndrome,discharged,59
+46,90,H,Helicopter,severe trauma,decreased,60
+62,113,H,Helicopter,acute coronary syndrome,transfer to other hospital,62
 58,153,H,Helicopter,severe trauma,discharged,63
+89,102,H,Helicopter,acute coronary syndrome,reeducation,64
 31,72,H,Helicopter,severe trauma,discharged,65
+48,107,H,Helicopter,acute coronary syndrome,repatriation,66
+62,90,H,Helicopter,acute coronary syndrome,reeducation,67
 93,99,H,Helicopter,acute coronary syndrome,discharged,68
+62,110,H,Helicopter,acute coronary syndrome,reeducation,69
+76,193,H,Helicopter,strokes,rehospitalise,70
 76,76,H,Helicopter,acute coronary syndrome,discharged,71
+41,118,H,Helicopter,severe trauma,hospitalise,72
 28,98,H,Helicopter,severe trauma,discharged,73
+99,121,H,Helicopter,strokes,repatriation,74
 84,107,H,Helicopter,strokes,discharged,75
+58,167,H,Helicopter,severe trauma,hospitalise,76
+56,93,H,Helicopter,acute coronary syndrome,decreased,77
+87,137,H,Helicopter,severe trauma,decreased,78
 52,84,H,Helicopter,acute coronary syndrome,discharged,79
 50,81,H,Helicopter,strokes,discharged,80
+85,176,H,Helicopter,strokes,decreased,81
+76,145,H,Helicopter,severe trauma,hospitalise,83
 41,61,H,Helicopter,strokes,discharged,84
+57,63,H,Helicopter,strokes,decreased,85
+41,139,H,Helicopter,severe trauma,decreased,86
 48,65,H,Helicopter,severe trauma,discharged,87
+64,86,H,Helicopter,strokes,decreased,88
 68,95,H,Helicopter,severe trauma,discharged,89
 24,109,H,Helicopter,severe trauma,discharged,90
 46,87,H,Helicopter,acute coronary syndrome,discharged,91
 50,96,H,Helicopter,severe trauma,discharged,92
 25,68,H,Helicopter,severe trauma,discharged,93
+93,117,H,Helicopter,acute coronary syndrome,rehospitalise,94
 52,235,H,Helicopter,severe trauma,discharged,95
+61,159,H,Helicopter,acute coronary syndrome,decreased,96
+70,114,H,Helicopter,acute coronary syndrome,transfer to other hospital,97
 38,89,H,Helicopter,severe trauma,discharged,98
 46,80,H,Helicopter,acute coronary syndrome,discharged,99
 93,164,H,Helicopter,strokes,discharged,100
@@ -90,8 +112,10 @@
 76,82,H,Helicopter,acute coronary syndrome,discharged,115
 74,112,H,Helicopter,acute coronary syndrome,discharged,116
 74,113,H,Helicopter,acute coronary syndrome,discharged,116
+77,125,H,Helicopter,acute coronary syndrome,aftercare & rehabilitation,117
 52,70,H,Helicopter,acute coronary syndrome,discharged,118
 38,88,H,Helicopter,acute coronary syndrome,discharged,119
+89,78,H,Helicopter,acute coronary syndrome,rehospitalise,120
 86,104,H,Helicopter,acute coronary syndrome,discharged,121
 41,91,H,Helicopter,acute coronary syndrome,discharged,122
 62,203,H,Helicopter,acute coronary syndrome,discharged,123
@@ -109,11 +133,13 @@
 14,84,T,Ground,other coronary syndrome,discharged,136
 14,84,T,Ground,other coronary syndrome,discharged,136
 25,75,T,Ground,acute coronary syndrome,discharged,137
+26,77,T,Ground,severe trauma,reeducation,138
 24,88,T,Ground,severe trauma,discharged,139
 26,97,T,Ground,other,discharged,140
 16,87,T,Ground,acute coronary syndrome,discharged,141
 26,86,T,Ground,severe trauma,discharged,144
 19,106,T,Ground,acute coronary syndrome,discharged,145
+19,149,T,Ground,severe trauma,hospitalise,146
 31,83,T,Ground,acute coronary syndrome,discharged,148
 21,79,T,Ground,acute coronary syndrome,discharged,149
 41,99,T,Ground,acute coronary syndrome,discharged,150
@@ -122,6 +148,7 @@
 34,89,T,Ground,acute coronary syndrome,discharged,153
 21,86,T,Ground,acute coronary syndrome,discharged,154
 16,93,T,Ground,acute coronary syndrome,discharged,155
+36,116,T,Ground,severe trauma,hospitalise,156
 24,104,T,Ground,severe trauma,discharged,157
 16,103,T,Ground,severe trauma,discharged,158
 20,71,T,Ground,acute coronary syndrome,discharged,159
@@ -133,6 +160,7 @@
 41,85,T,Ground,acute coronary syndrome,discharged,165
 21,75,T,Ground,severe trauma,discharged,167
 33,103,T,Ground,severe trauma,discharged,168
+17,136,T,Ground,severe trauma,hospitalise,170
 25,105,T,Ground,acute coronary syndrome,discharged,171
 26,106,T,Ground,acute coronary syndrome,discharged,172
 29,124,T,Ground,severe trauma,discharged,173
@@ -140,6 +168,10 @@
 29,106,T,Ground,severe trauma,discharged,175
 29,104,T,Ground,severe trauma,discharged,176
 15,92,T,Ground,acute coronary syndrome,discharged,177
+17,78,T,Ground,other,hospitalise,178
+72,145,T,Ground,strokes,rehospitalise,179
+18,108,T,Ground,acute coronary syndrome,rehospitalise,180
+14,79,T,Ground,acute coronary syndrome,rehospitalise,181
 41,108,T,Ground,acute coronary syndrome,discharged,182
 41,108,T,Ground,acute coronary syndrome,discharged,182
 18,89,T,Ground,acute coronary syndrome,discharged,184
@@ -154,33 +186,47 @@
 19,88,T,Ground,acute coronary syndrome,discharged,194
 29,130,T,Ground,severe trauma,discharged,195
 31,63,T,Ground,acute coronary syndrome,discharged,197
+21,88,T,Ground,acute coronary syndrome,hospitalise,198
 34,89,T,Ground,acute coronary syndrome,discharged,199
+25,143,T,Ground,severe trauma,discharged,200
 20,89,T,Ground,acute coronary syndrome,discharged,201
 24,70,T,Ground,acute coronary syndrome,discharged,202
 36,72,T,Ground,severe trauma,discharged,204
+15,78,T,Ground,acute coronary syndrome,hospitalise,205
 20,63,T,Ground,severe trauma,discharged,206
 22,86,T,Ground,acute coronary syndrome,discharged,207
+15,88,T,Ground,strokes,rehospitalise,208
+39,136,T,Ground,acute coronary syndrome,hospitalise,209
 27,100,T,Ground,acute coronary syndrome,discharged,210
+21,102,T,Ground,acute coronary syndrome,reeducation,211
 34,73,T,Ground,severe trauma,discharged,212
 22,85,T,Ground,acute coronary syndrome,discharged,213
+34,98,T,Ground,acute coronary syndrome,rehospitalise,214
 31,112,T,Ground,acute coronary syndrome,discharged,215
 41,95,T,Ground,acute coronary syndrome,discharged,216
 21,68,T,Ground,strokes,discharged,217
 18,44,T,Ground,strokes,discharged,217
 22,85,T,Ground,acute coronary syndrome,discharged,218
 34,96,T,Ground,acute coronary syndrome,discharged,221
+26,116,T,Ground,acute coronary syndrome,rehospitalise,222
+22,91,T,Ground,acute coronary syndrome,rehospitalise,223
 33,58,T,Ground,acute coronary syndrome,discharged,224
 31,43,T,Ground,acute coronary syndrome,discharged,225
 41,96,T,Ground,acute coronary syndrome,discharged,226
 27,75,T,Ground,other,discharged,227
+32,128,T,Ground,acute coronary syndrome,rehospitalise,228
+25,80,T,Ground,severe trauma,decreased,229
 41,90,T,Ground,acute coronary syndrome,discharged,230
 27,106,T,Ground,strokes,discharged,231
 15,84,T,Ground,acute coronary syndrome,discharged,232
 38,97,T,Ground,severe trauma,discharged,233
 16,105,T,Ground,acute coronary syndrome,discharged,234
 31,87,T,Ground,acute coronary syndrome,discharged,235
+26,80,T,Ground,acute coronary syndrome,reeducation,236
 62,149,T,Ground,acute coronary syndrome,discharged,237
+33,88,T,Ground,acute coronary syndrome,decreased,238
 29,110,T,Ground,other,discharged,239
+58,199,T,Ground,acute coronary syndrome,decreased,240
 20,114,T,Ground,acute coronary syndrome,discharged,241
 48,109,T,Ground,acute coronary syndrome,discharged,242
 23,95,T,Ground,acute coronary syndrome,discharged,243
@@ -192,49 +238,4 @@
 35,101,T,Ground,acute coronary syndrome,discharged,249
 45,149,T,Ground,acute coronary syndrome,discharged,250
 22,89,T,Ground,acute coronary syndrome,discharged,251
-62,139,H,Helicopter,severe trauma,hospitalise,10
-43,152,H,Helicopter,severe trauma,hospitalise,23
-39,266,H,Helicopter,severe trauma,hospitalise,33
-45,125,H,Helicopter,severe trauma,hospitalise,34
-58,154,H,Helicopter,severe trauma,hospitalise,43
-126,96,H,Helicopter,strokes,hospitalise,46
-38,93,H,Helicopter,severe trauma,hospitalise,47
-74,114,H,Helicopter,severe trauma,hospitalise,52
-108,122,H,Helicopter,strokes,hospitalise,55
-58,103,H,Helicopter,severe trauma,hospitalise,56
-41,118,H,Helicopter,severe trauma,hospitalise,72
-58,167,H,Helicopter,severe trauma,hospitalise,76
-76,145,H,Helicopter,severe trauma,hospitalise,83
-19,149,T,Ground,severe trauma,hospitalise,146
-36,116,T,Ground,severe trauma,hospitalise,156
-17,136,T,Ground,severe trauma,hospitalise,170
-17,78,T,Ground,other,hospitalise,178
-21,88,T,Ground,acute coronary syndrome,hospitalise,198
-15,78,T,Ground,acute coronary syndrome,hospitalise,205
-39,136,T,Ground,acute coronary syndrome,hospitalise ,209
-24,35,H,Helicopter,severe trauma,unknown repatriation,41
-48,107,H,Helicopter,acute coronary syndrome,repatriation,66
-99,121,H,Helicopter,strokes,repatriation,74
-24,78,H,Helicopter,severe trauma,rapprochement familial,57
-73,83,H,Helicopter,strokes,reeducation,25
-42,170,H,Helicopter,severe trauma,reeducation,58
-89,102,H,Helicopter,acute coronary syndrome,reeducation,64
-62,90,H,Helicopter,acute coronary syndrome,reeducation,67
-62,110,H,Helicopter,acute coronary syndrome,reeducation,69
-21,102,T,Ground,acute coronary syndrome,reeducation,211
-26,80,T,Ground,acute coronary syndrome,reeducation,236
-26,77,T,Ground,severe trauma,reeducation,138
-76,193,H,Helicopter,strokes,rehospitalise,70
-93,117,H,Helicopter,acute coronary syndrome,rehospitalise,94
-89,78,H,Helicopter,acute coronary syndrome,rehospitalise,120
-72,145,T,Ground,strokes,rehospitalise,179
-18,108,T,Ground,acute coronary syndrome,rehospitalise,180
-14,79,T,Ground,acute coronary syndrome,rehospitalise,181
-15,88,T,Ground,strokes,rehospitalise,208
-34,98,T,Ground,acute coronary syndrome,rehospitalise,214
-26,116,T,Ground,acute coronary syndrome,rehospitalise,222
-22,91,T,Ground,acute coronary syndrome,rehospitalise,223
-32,128,T,Ground,acute coronary syndrome,rehospitalise,228
-62,113,H,Helicopter,acute coronary syndrome,transfer to other hospital,62
-70,114,H,Helicopter,acute coronary syndrome,transfer to other hospital,97
-25,143,T,Ground,severe trauma,discharged,200
+,,,,,,29981
