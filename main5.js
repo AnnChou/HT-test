@@ -141,7 +141,7 @@ function refreshShapes() {  //BEGIN function refreshShape
 
   // filter data with checkbox choice
 	var checks = {};
-	var modeData = {}
+	// var modeData = {} //not used
 	d3.selectAll('input[type=checkbox]').each(function(){
 		checks[this.value] = this.checked; //true/False
 		if (this.checked){
@@ -346,30 +346,36 @@ function refreshShapes() {  //BEGIN function refreshShape
        colorD = colorscaleSet;
     var cValueM = function(d) { return d["mode"];},   // d3 does color magics
        colorM = colorscaleSet;
+    //"maha_scale"
+    // var colorRange = ["#6363FF", "#6373FF", "#63A3FF", "#63E3FF", "#63FFFB", "#63FFCB",
+    //              "#63FF9B", "#63FF6B", "#7BFF63", "#BBFF63", "#DBFF63", "#FBFF63", 
+    //              "#FFD363", "#FFB363", "#FF8363", "#FF7363", "#FF6364"];
 
-    var colorRange = ["#6363FF", "#6373FF", "#63A3FF", "#63E3FF", "#63FFFB", "#63FFCB",
-                 "#63FF9B", "#63FF6B", "#7BFF63", "#BBFF63", "#DBFF63", "#FBFF63", 
-                 "#FFD363", "#FFB363", "#FF8363", "#FF7363", "#FF6364"];
-    console.log(d3.interpolateViridis);
-    var colorMa = d3.scale.linear()
-                    // .range([1, 0])
-                    .range(colorRange)
-                    .domain([0, data.maxMahaDis]);
+    // var colorMa = d3.scale.linear()
+    //                 // .range([1, 0])
+    //                 .range(colorRange)
+    //                 .domain([0, data.maxMahaDis]);
 
-    var maHaDisRange = d3.scale.linear().domain(d3.extent(data.mahaDis)).range([0,1]);
-    //when fill 
+    // var maHaDisRange = d3.scale.linear().domain(d3.extent(data.mahaDis)).range([0,1]);
+    // //when fill 
      //  .style("fill", function(d) {
      // return colorMa(maHaDisRange(d.mahaDis))
 
+    // pick any number [3-9]
+    var numColors = 6;
 
-    // // colorMa.interpolator(d3.interpolateViridis);  // not a function
-    // var sequentialScale = d3.scale.Sequential();  // not a function
-  // .domain([0, 100])
-  // .interpolator(d3.interpolateRainbow);
-                    
-    // var cValueMa = function(d) { return d.mahaDis;},   // d3 does color magics
-    //    colorMa = colorMa;
-    //"maha_scale"
+    var maHaDisRange  = d3.scale.quantize()
+      .domain(d3.extent(data.mahaDis))
+      .range(colorbrewer.Reds[numColors]);
+
+    // // use the maHaDisRange to fill in a canvas or whatever you want to do...
+    // canvas.append("svg:rect")
+    //   .data(dataset)
+    //   .enter()
+    //   // snip...
+    //   .style("fill", function(d) {return maHaDisRange(d.mahaDis);})
+
+
     var radius = 3;
   //cValueD.domain = ["H", "T"]
 
@@ -407,7 +413,7 @@ function addSquare_for_H(myData) {
        if (colorscale =="diagnostic_smur"){
           return colorD(cValueD(d));
       } else if (colorscale == "maha_scale") {
-         return colorMa(maHaDisRange(d.mahaDis));
+         return maHaDisRange(d.mahaDis);
       }
       else {
          return colorM(cValueM(d));
@@ -508,8 +514,7 @@ function addCircles_for_T(myData) {
           return colorD(cValueD(d));
       } else if (colorscale == "maha_scale") {
           // return colorMa(cValueMa(d));
-          return function(d) { return colorMa(d.mahaDis);}
-
+          return maHaDisRange(d.mahaDis);
       } else
       {
          return colorM(cValueM(d));
@@ -552,9 +557,9 @@ circles.on("mouseover", function(d) {   //BEGIN mouseover on T
   });
    
  circles.on("click",function(d) {  //remove on click  (T set)
-      confirm("You double-click a data point. \n This action will hide this data point (#" + d.pid + ")\n\n" +
+      confirm("You double-click a data point. \n This action will hide this data point (ID #" + d.pid + ")\n\n" +
             "Transport mode: " + d.mode_long + "\n SMUR for: " + d.diagnostic_smur 
-                      + "\n Outcome: " + d.outcome_28day);
+                      + "\n Outcome: " + d.outcome_28day +"\n\n" + "Mahalanobis distance from centroid: " + d.mahaDis);
       d3.select(this).attr({          // making the selected shape transparent/opague and white
         //  style: ("opacity", 0),
           style: ("opacity", 1),
@@ -591,6 +596,9 @@ circles.on("mouseover", function(d) {   //BEGIN mouseover on T
   if (colorscale =="diagnostic_smur"){
     color = colorD;
   } 
+  else if (colorscale == "maha_scale") {
+    color = maHaDisRange;
+  }
   else {
     color = colorM;
   }

@@ -19,14 +19,14 @@
            
         <div id="filter">  <!-- on script.js d3.selectAll('select').on('change',function(){ -->
             <b>Mode Filter:</b><br>
-            <input name='v' value="H" type="checkbox" checked>Helicopter          <br>
-            <input name="v" value="T" type="checkbox" checked >Ground Transport
+            <input name='v' value="H" type="checkbox" checked>Helicopter (H)         <br>
+            <input name="v" value="T" type="checkbox" checked >Ground Transport (T)
         </div>
         <form id="mark">
             <b>Color Scale</b>
             <div><input type="radio" name="colorscale" value="mode" checked>Mode</div>
             <div><input type="radio" name="colorscale" value="diagnostic_smur" >Diagnosis</div>
-            <div><input type="radio" name="colorscale" value="maha_scale" >Distance from centroid</div>
+            <div><input type="radio" name="colorscale" value="maha_scale" >Mahalanobis* distance</div>
         </form>
 
 
@@ -48,13 +48,15 @@
     <svg class="chart"></svg>
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="lib/d3.v3.min.js"></script>
-   <script src="http://d3js.org/d3.v3.min.js"></script> ->
-<!--    <script src="lib/d3-shape.v0.6.min.js"></script> <!-- //not needed --> -->
+   <script src="http://d3js.org/d3.v3.min.js"></script> 
+<!--    <script src="lib/d3-shape.v0.6.min.js"></script> <!-- //not needed --> 
     <script src="lib/d3-array.min.js"></script>  
     <script src="lib/mahalanobis.min.js"></script>
     <script src="lib/simple-statistics.min.js"></script>  
+    <script src="lib/colorbrewer.js"></script>  
+
     <script src="http://code.jquery.com/jquery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>
-<!--     <script type="text/javascript" src="lib/materialize.min.js"></script>  <!-- not needed --> -->
+<!--     <script type="text/javascript" src="lib/materialize.min.js"></script>  <!-- not needed --> 
 <!-- <!--     <script src="helper.js"></script> -->
     <script src="main5.js"></script>    
     <script>
