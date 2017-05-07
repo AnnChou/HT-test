@@ -33,9 +33,6 @@ H5 {
 H6 {
   font: 11 px sans-serif;
 }
-.button{
-  font: 11 px sans-serif;
-}
 
 .name{
   position: relative;
@@ -65,12 +62,13 @@ H6 {
   position: absolute;
 }
 
-
 #mark {
   padding-left: 150px;
   position: inherit;
 }
-
+#button{
+  font-size: 11 px;
+}
 
 #xAXs {
 /*  position: relative;*/

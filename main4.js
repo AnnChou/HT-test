@@ -1,4 +1,5 @@
-// main3.js
+// main4.js
+// author: Ann Chou (akchou@sfu.ca)
 
 
 
@@ -13,8 +14,6 @@ var restored_data_id = [];
 var removed_data_id = [];
 var removed_data = [];
 var lastRemove = [];
-
-
 
 // ********* BEGIN read external data ***********
 d3.csv("data/HTData.csv", function(error, data) {
@@ -31,6 +30,7 @@ d3.csv("data/HTData.csv", function(error, data) {
   	console.log(baseData[0]);
   	refreshShapes();
 });     // END read external data
+
 
 // ******** BEGIN set up chart area (exclude those data dependent ones) *************
 // Global variables for "chart"
@@ -126,22 +126,6 @@ var tooltip = d3.select("H3").append("div")
     .style("opacity", 0)
     .style("background-color", "#FFDFE0"); //pink
 
-
-
-     // .on("click", function(){                     // ************
-     //  // Determine if current line is visible 
-     //  console.log("click legend")
-     //  var active   = d.active ? false : true,  // ************ 
-     //  newOpacity = active ? 0 : 1;             // ************
-     //  // Hide or show the elements based on the ID
-     //  d3.select("#"+d.key.replace(/\s+/g, '')) // *********
-     //      .transition().duration(100)          // ************
-     //      .style("opacity", newOpacity);       // ************
-     //  // Update whether or not the elements are active
-     //  d.active = active;                       // ************
-     //  })
-     ; 
-
 // END set up chart area (exclude those data dependent ones)  
 
 function refreshShapes() {  //BEGIN function refreshShape
@@ -183,20 +167,39 @@ function refreshShapes() {  //BEGIN function refreshShape
 	var data = baseData.filter(function(d,i){
 		d.x = d.distance_km;
 		d.y = d.out_of_hospital_time_minute;
+
 	    return checks[d.mode];
 	  });
 
 	dataforCal = data;
 	HdataforCal = data.filter(function(e) { return e.mode == "H"});
 	TdataforCal = data.filter(function(e) { return e.mode == "T"});
+
+  // ********* BEGIN calculate mahalanobis distance ***********
+  // mahalanobis(data); // arguement
+  var points = [];
+  data.forEach(function(d, i) {
+    points.push([d.x, d.y]);
+  })
+
+  data.mahaDis = mahalanobis(points);
+  // console.log(data.mahaDis);
+  data.maxMahaDis = data.mahaDis[0]
+
+  data.forEach(function(d, i) {
+    d.mahaDis = data.mahaDis[i];
+    if (data.mahaDis[i] > data.maxMahaDis ) { data.maxMahaDis  = data.mahaDis[i] ; }
+
+  });
+  // console.log(data[1]);
+  // console.log(data[1].mahaDis);
+
 	// console.log("data - # " + data.length);
 	// console.log("baseDataL - # " + baseData.length);
-	// console.log("x range" + d3.extent(data, function(d) { return d.x; }));
-	// console.log("data.lenght" + data.length);
 
 	var xVals = function(d){ return d.distance_km;}; //d.x
 	var yVals = function(d){ return d.out_of_hospital_time_minute;};  //d.y
-	//console.log(data[0].x);
+
 	var xMap = function(d) { return xScale(xVals(d));};
 	var yMap = function(d) { return yScale(yVals(d));};
 
@@ -423,7 +426,7 @@ function addSquare_for_H(myData) {
               // use confirm instead of alert
       confirm("You double-click a data point. \n This action will hide this data point (ID #" + d.pid + ")\n\n" +
             "Transport mode: " + d.mode_long + "\n SMUR for: " + d.diagnostic_smur 
-                      + "\n Outcome: " + d.outcome_28day);
+                      + "\n Outcome: " + d.outcome_28day +"\n\n" + "Mahalanobis distance from centroid: " + d.mahaDis);
       d3.select(this).attr({
          // style: ("opacity", 0),   // making the selected shape transparent and white
           style: ("opacity", 0), 
@@ -437,7 +440,7 @@ function addSquare_for_H(myData) {
       // then call refreshShapes()
           // console.log("Clicked H this.id "+ this); //[object SVGRectElement]
           // console.log("Clicked H this.pid "+ this.pid);
-          console.log("User Clicked H dot: this.id(diagnostic) "+ this.id + " " + d.outcome_28day+ " " +"; d.pid " + d.pid);  //this.id is diagnostic, d.id is id in data
+          console.log("User Clicked H dot: this.id(diagnostic) "+ this.id + " " + d.outcome_28day+ " " +"; d.pid " + d.pid + "Maha dis "+ d.mahaDis);  //this.id is diagnostic, d.id is id in data
           var dot_id = this.id;
           var data_id = d.pid;
           // console.log("before filter" + baseData .length + "data_id" + data_id);
@@ -529,7 +532,7 @@ circles.on("mouseover", function(d) {   //BEGIN mouseover on T
       // still need to do remove "this" from baseData (HdataforCal is filtered from baseData) - via function removeData
       // save "this" to lastRemove
       // then call refreshShapes()
-      console.log("Clicked T this.id "+ this.id + "; d.id " + d.pid);  //this.id is diagnostic, d.id is id in data
+      console.log("User Clicked T dot: this.id(diagnostic) "+ this.id + " " + d.outcome_28day+ " " +"; d.pid " + d.pid + "Maha dis "+ d.mahaDis);  //this.id is diagnostic, d.id is id in data
       var dot_id = this.id;
       var data_id = d.pid;
       console.log("before filter" + baseData .length + "data_id" + data_id);
@@ -642,14 +645,14 @@ d3.select("H5").append("button")
 function undoLast() {
   if (removed_data.length >0 ) {
     console.log("!!!Inside undoLast");
-    console.log("baseData " +baseData.length);  // basedata is passed properly
+    // console.log("baseData " +baseData.length);  // basedata is passed properly
     console.log(removed_data_id); //["14"]
     console.log(lastRemove); // e.g [rect#strokes] or eg. 2 [rect#severe trauma, rect#acute coronary syndrome]
-    console.log("pid " + lastRemove.pid); 
-    var DotTobeAdded = lastRemove.pop();
+    var DotTobeAdded = lastRemove.pop();  //not really used for redraw, used dataTobeAdded instead
     console.log(DotTobeAdded);  //e.g <rect class="dots" id="strokes" width="9" height="9" x="309.344262295082" y="207.99999999999994" style="opacity: 1;" fill="#FFFFFF"></rect>
 
     var dataTobeAdded = removed_data.pop();
+    console.log("dataTobeAdded back");    
     console.log(dataTobeAdded); 
 
     baseData = baseData.concat(dataTobeAdded);

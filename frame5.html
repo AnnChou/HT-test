@@ -26,6 +26,7 @@
             <b>Color Scale</b>
             <div><input type="radio" name="colorscale" value="mode" checked>Mode</div>
             <div><input type="radio" name="colorscale" value="diagnostic_smur" >Diagnosis</div>
+            <div><input type="radio" name="colorscale" value="maha_scale" >Distance from centroid</div>
         </form>
 
 
@@ -38,7 +39,7 @@
     <h6></h6>        <div id="removeText"><!--- removeText area --></div>
       <div id="footnote"><!--- footnote area -->
           <p align = "right">Data from <b>Service mobile d'urgence et de réanimation (SMUR)</b> in France</p>
-          <p align = "right"><b>Out-of-hospital time</b> is the duration from call centre receiving a request to the ambulance arrival at the hospital</p>
+          <p align = "right"><b>Time</b> (y-axis) is the duration from call centre receiving a request to the ambulance arrival at the hospital</p>
           <p align = "right">Either a <b>helicoper (mode H)</b>, marked with a square on above chart, or a <b>ground transport (mode T)</b>, marked with a circle, is sent for each case.</p>
       
       </div>
@@ -47,15 +48,15 @@
     <svg class="chart"></svg>
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="lib/d3.v3.min.js"></script>
-   <!--<script src="http://d3js.org/d3.v3.min.js"></script> ->
-   <!-- <script src="lib/d3-shape.v0.6.min.js"></script> -->
+   <script src="http://d3js.org/d3.v3.min.js"></script> ->
+<!--    <script src="lib/d3-shape.v0.6.min.js"></script> <!-- //not needed --> -->
     <script src="lib/d3-array.min.js"></script>  
-   <!-- <script src="lib/mahalanobis.min.js"></script>-->
+    <script src="lib/mahalanobis.min.js"></script>
     <script src="lib/simple-statistics.min.js"></script>  
-<!--     <script src="http://code.jquery.com/jquery-1.8.3.min.js" type="text/javascript" charset="utf-8"></scrip -->t>
-<!--     <script type="text/javascript" src="js/materialize.min.js"></script> -->
-<!--     <script src="helper.js"></script> -->
-    <script src="main3.js"></script>    
+    <script src="http://code.jquery.com/jquery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>
+<!--     <script type="text/javascript" src="lib/materialize.min.js"></script>  <!-- not needed --> -->
+<!-- <!--     <script src="helper.js"></script> -->
+    <script src="main5.js"></script>    
     <script>
     </script>
   </body>

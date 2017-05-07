@@ -1,11 +1,16 @@
-// main3.js
+// main2.js
 
+d3.selectAll('select').on('change',function(){
+  refreshShapes();
+});
 
+d3.selectAll('input').on('click', function(){
+  refreshShapes();
+})
 
 // Global variables for "data"
 var baseData = null;
 var data = null;
-var legendData = [];
 var dataforCal = [];  
 var HdataforCal = [];  
 var TdataforCal = [];
@@ -13,8 +18,6 @@ var restored_data_id = [];
 var removed_data_id = [];
 var removed_data = [];
 var lastRemove = [];
-
-
 
 // ********* BEGIN read external data ***********
 d3.csv("data/HTData.csv", function(error, data) {
@@ -119,28 +122,12 @@ yg.append("text")
   .style("text-anchor", "end")
   .text("Time: from first-contact to arrival (mins)");
 
-// **** Add Tooltip & legend area to webpage ******
+// **** Add Tooltip area to webpage ******
 //  var tooltip = d3.select("body").append("div")
 var tooltip = d3.select("H3").append("div")
     .attr("class", "tooltip")
     .style("opacity", 0)
     .style("background-color", "#FFDFE0"); //pink
-
-
-
-     // .on("click", function(){                     // ************
-     //  // Determine if current line is visible 
-     //  console.log("click legend")
-     //  var active   = d.active ? false : true,  // ************ 
-     //  newOpacity = active ? 0 : 1;             // ************
-     //  // Hide or show the elements based on the ID
-     //  d3.select("#"+d.key.replace(/\s+/g, '')) // *********
-     //      .transition().duration(100)          // ************
-     //      .style("opacity", newOpacity);       // ************
-     //  // Update whether or not the elements are active
-     //  d.active = active;                       // ************
-     //  })
-     ; 
 
 // END set up chart area (exclude those data dependent ones)  
 
@@ -151,32 +138,23 @@ function refreshShapes() {  //BEGIN function refreshShape
   //    3a) mouse-over, 
   //    3b) mouse-out 
   //    3c) on click remove "this" data  
-    // console.log("In refreshShape");
-    // console.log(baseData[0]);  // basedata is passed properly
+    console.log("In refreshShape");
+    console.log(baseData[0]);  // basedata is passed properly
 
   // filter data with checkbox choice
 	var checks = {};
 	var modeData = {}
 	d3.selectAll('input[type=checkbox]').each(function(){
 		checks[this.value] = this.checked; //true/False
-		if (this.checked){
-			console.log(this.value + " checked by user");
-      legendData.push(this.value);
-		}
-		else {
-			console.log(this.value + " unchecked by user");
-			legendData = legendData.filter(function(item) { 
-        return item !== this.value
-      })
-		}
+		// if (this.checked){
+		// 	console.log(this.value + " checked");
+		// 	modeData[this.value]  = baseData.filter(function(e) { return e.mode == this.value});//not working
+		// }
+		// else {
+		// 	console.log(this.value + " unchecked");
+		// 	modeData[this.value]  = {};
+		// }
 	});
-
-  d3.selectAll('input[type=radio]').each(function(){
-    // console.log("radio");
-    console.log(this.value, this.checked, "radio button");
- });
-
-  // console.log(checks);  
 	// console.log("T "+checks["T"]);
 	// console.log("H "+checks["H"]);
 		
@@ -189,14 +167,14 @@ function refreshShapes() {  //BEGIN function refreshShape
 	dataforCal = data;
 	HdataforCal = data.filter(function(e) { return e.mode == "H"});
 	TdataforCal = data.filter(function(e) { return e.mode == "T"});
-	// console.log("data - # " + data.length);
-	// console.log("baseDataL - # " + baseData.length);
-	// console.log("x range" + d3.extent(data, function(d) { return d.x; }));
-	// console.log("data.lenght" + data.length);
+	console.log("data - # " + data.length);
+	console.log("baseDataL - # " + baseData.length);
+	console.log("x range" + d3.extent(data, function(d) { return d.x; }));
+	console.log("data.lenght" + data.length);
 
 	var xVals = function(d){ return d.distance_km;}; //d.x
 	var yVals = function(d){ return d.out_of_hospital_time_minute;};  //d.y
-	//console.log(data[0].x);
+	console.log(data[0].x);
 	var xMap = function(d) { return xScale(xVals(d));};
 	var yMap = function(d) { return yScale(yVals(d));};
 
@@ -209,17 +187,16 @@ function refreshShapes() {  //BEGIN function refreshShape
 	// xScale.domain(d3.extent(data, function(d) { return d.x; })).nice();  //[12, 132]
 	yScale.domain(d3.extent(data, function(d) { return d.y; })).nice();
 
-  // if ((checks["T"] != false) &&(checks["H"] != false)) {
-      xg.call(xAxis);
-      yg.call(yAxis);    
-  // }
+	xg.call(xAxis);
+  yg.call(yAxis);
+
   var mode_type = d3.set(data.map(function(d) { return d.mode; }));
 
 	// **** BEIGN Set up regression line ****
 	d3.selectAll('.line').remove()   // to prevent ghost line
 
 	if (checks["T"] == true){
-		// console.log("T == true");
+		console.log("T == true");
 	            // ***** BEGIN draw regression line-T        
         TregLineData = calculateRegression(TdataforCal);
         var TlineFunction = d3.svg.line()    //the accessor function / path generator
@@ -260,7 +237,7 @@ function refreshShapes() {  //BEGIN function refreshShape
         // END   draw regression line - T 
 	}
 	if (checks["H"] == true){
-		// console.log("H == true");
+		console.log("H == true");
 	             // ***** BEGIN draw regression line-H        
         HregLineData = calculateRegression(HdataforCal);
         var HlineFunction = d3.svg.line()    //the accessor function / path generator
@@ -289,7 +266,7 @@ function refreshShapes() {  //BEGIN function refreshShape
                 .duration(200)
                 .style("opacity", .8);
              tooltip.html("helicopter trend line")
-                .style("left", (d3.event.pageX + 10) + "px")
+                .style("left", (d3.event.pageX + 5) + "px")
                 .style("top", (d3.event.pageY - 28) + "px");
                 })  // END mouseover
              .on("mouseout", function(d) {
@@ -304,8 +281,8 @@ function refreshShapes() {  //BEGIN function refreshShape
           
     function calculateRegression (my_dataforCal){
         // Need to calculate the regression before
-        // console.log("called calculateRegression" )
-        // console.log("my_dataforCal.length "+ my_dataforCal.length )
+        console.log("called calculateRegression" )
+        console.log("my_dataforCal.length "+ my_dataforCal.length )
         var m = 1;
         var b = 0; 
 //                console.log("calculate regression" + my_dataforCal.length);
@@ -336,33 +313,31 @@ function refreshShapes() {  //BEGIN function refreshShape
 		//  .data(data).enter();
 		.data(dataforCal).enter();
 
-  var colorscaleSet = d3.scale.category20();
 	var colorscale = d3.select('input[type=radio]:checked').node().value;
     var cValueD = function(d) { return d["diagnostic_smur"];},   // d3 does color magics
-       colorD = colorscaleSet;
+       color = d3.scale.category20();
     var cValueM = function(d) { return d["mode"];},   // d3 does color magics
-       colorM = colorscaleSet;
+       color = d3.scale.category20();
     var radius = 3;
-  //cValueD.domain = ["H", "T"]
 
-  // console.log(checks["T"] , checks["H"]);
+  console.log(checks["T"] , checks["H"]);
 
 	if (checks["T"] == true){ //BEGIN   draw dots (circles) - T
 		        //svg.selectAll('path.line')
-		// console.log("T dot = true " + TdataforCal.length);
+		console.log("T dot = true " + TdataforCal.length);
 		addCircles_for_T(TdataforCal);
         // END   draw dots - T 
 	}
 	if (checks["H"] == true){  //BEGIN   draw dots - H
-		// console.log("H dots== true");
-    addSquare_for_H(HdataforCal);
+		console.log("H dots== true");
+        addSquare_for_H(HdataforCal);
 
         // END   draw dots - H   
 	}
 
 function addSquare_for_H(myData) {
     // Start Square for Mode H
-    // console.log("addSquare_for_H ", radius, cValueD, myData.length);
+    console.log("addSquare_for_H ", radius, cValueD, myData.length);
     var squares = shapes.append("rect")
         .filter(function(d){ return (d.mode == "H") }) //H
         //  .attr("id", mode_type[0])
@@ -377,9 +352,9 @@ function addSquare_for_H(myData) {
     .style("fill", function(d){
          //get the value of the checked
        if (colorscale =="diagnostic_smur"){
-        return colorD(cValueD(d));
+        return color(cValueD(d));
       } else {
-        return colorM(cValueM(d));
+        return color(cValueM(d));
       }
     })
 		.style("opacity", .7);
@@ -398,9 +373,9 @@ function addSquare_for_H(myData) {
      tooltip.transition()
         .duration(200)
         .style("opacity", .8);
-     tooltip.html( "D: <b>" + d.distance_km + "</b> km T: <b>" + d.out_of_hospital_time_minute + 
-                  "</b> min <br/><b>" + d.mode_long + "</b><br/> SMUR for: <b>" + d.diagnostic_smur 
-                  + "</b><br/> Outcome: <b>" + d.outcome_28day)
+     tooltip.html( "D: <b>" + d.distance_km + "</b> T:<b>" + d.out_of_hospital_time_minute + 
+                  "</b><br/><b>" + d.mode_long + "</b><br/> SMUR for:" + d.diagnostic_smur 
+                  + "<br/> Outcome: <b>" + d.outcome_28day)
         .style("left", (d3.event.pageX + 5) + "px")
         .style("top", (d3.event.pageY - 28) + "px");
         })  // END mouseover H
@@ -437,11 +412,11 @@ function addSquare_for_H(myData) {
       // then call refreshShapes()
           // console.log("Clicked H this.id "+ this); //[object SVGRectElement]
           // console.log("Clicked H this.pid "+ this.pid);
-          console.log("User Clicked H dot: this.id(diagnostic) "+ this.id + " " + d.outcome_28day+ " " +"; d.pid " + d.pid);  //this.id is diagnostic, d.id is id in data
+          console.log("Clicked H this.id "+ this.id + "; d.id " + d.pid);  //this.id is diagnostic, d.id is id in data
           var dot_id = this.id;
           var data_id = d.pid;
-          // console.log("before filter" + baseData .length + "data_id" + data_id);
-          // console.log(baseData[0]);
+          console.log("before filter" + baseData .length + "data_id" + data_id);
+          console.log(baseData[0]);
           removeData(this, data_id);
 
           d3.select(this).remove(); // remove from D3 selection (.data and visual)
@@ -449,8 +424,8 @@ function addSquare_for_H(myData) {
             .duration(500)
             .style("opacity", 0);
 
-          // console.log("after filter" + baseData.length);
-          console.log("removed_data_id:" +removed_data_id);
+          console.log("after filter" + baseData.length);
+          console.log(removed_data_id);
 
            }) // end on click // end Square for mode H
     return lastRemove, lastRemove.id, data, squares;
@@ -459,7 +434,7 @@ function addSquare_for_H(myData) {
 // Shape Part 2: square  (circle) for T
 //function addCircles_for_T( shapes, mode_type, radius, xMap, yMap, data) {
 function addCircles_for_T(myData) {
-  // console.log("addCircles_for_T ", radius, cValueD, myData.length);
+  console.log("addCircles_for_T ", radius, cValueD, myData.length);
   var circles = shapes.append("circle")
     //                .filter(function(d){ return (d.mode != "H") })
     .filter(function(d){ return (d.mode =="T") })  //mode_type[1] == T
@@ -474,9 +449,9 @@ function addCircles_for_T(myData) {
     .style("fill", function(d){
          //get the value of the checked
        if (colorscale =="diagnostic_smur"){
-        return colorD(cValueD(d));
+        return color(cValueD(d));
       } else {
-        return colorM(cValueM(d));
+        return color(cValueM(d));
       }
     })   
     .style("opacity", .7);
@@ -494,9 +469,9 @@ circles.on("mouseover", function(d) {   //BEGIN mouseover on T
     tooltip.transition()
     .duration(200)
     .style("opacity", 1);
-    tooltip.html( "D: <b>" + d.distance_km + "</b> km T: <b>" + d.out_of_hospital_time_minute + 
-              "</b> min <br/><b>" + d.mode_long + "</b><br/> SMUR for: <b>" + d.diagnostic_smur 
-              + "</b><br/> Outcome: <b>" + d.outcome_28day)
+    tooltip.html( "D: <b>" + d.distance_km + "</b> T:<b>" + d.out_of_hospital_time_minute + 
+              "</b><br/><b>" + d.mode_long + "</b><br/> SMUR for:" + d.diagnostic_smur 
+              + "<br/> Outcome: <b>" + d.outcome_28day)
     .style("left", (d3.event.pageX + 5) + "px")
     .style("top", (d3.event.pageY - 28) + "px");
     });
@@ -546,83 +521,29 @@ circles.on("mouseover", function(d) {   //BEGIN mouseover on T
       }) // end on click T
     return lastRemove, lastRemove.id, data, circles;  // lastRemove, lastRemove.id is available on console
   }//END function addSquare_for_H()
-
-  var color;
-  // console.log(colorD);
-  // console.log(colorM);
-  // var legendtext;
-
-  if (colorscale =="diagnostic_smur"){
-    color = colorD;
-  } 
-  else {
-    color = colorM;
-  }
-
-  // draw legend
-  legendData = color.domain();
-  //legendData = ["H", "T"];
-  d3.selectAll('.legend').remove(); 
-  // console.log(legendData);
-
-  var legend = svg.selectAll(".legend")
-    .data(legendData)
-  
-  legend.enter().append("g")
-      .attr("class", "legend")
-      .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
-
-  // draw legend colored rectangles
-  legend.append("rect")
-      .attr("x", width - 18)
-      .attr("width", 18)
-      .attr("height", 18)
-     .style("fill", color);
-
-  // draw legend text
-  legend.append("text")
-      .attr("x", width - 24)
-      .attr("y", 9)
-      .attr("dy", ".35em")
-      .style("text-anchor", "end")
-      .text(function(d) { return d;})
-
-  legend.on("click", function(d, i){                     // ************
-      // Determine if current line is visible 
-      var active   = d.active ? false : true,  // ************ 
-      newOpacity = active ? 0 : 1;    
-      console.log("legendclick")
-      console.log(d, i);         // ************
-      // Hide or show the elements based on the ID
-      d3.select("#"+d) // *********
-          .transition().duration(100)          // ************
-          .style("opacity", newOpacity);       // ************
-      // // Update whether or not the elements are active
-      d.active = active;                       // ************
-      })                                       // ************
 }  // END function refreshShape
 
 
 function removeData(thisObject, data_id) {
-  // console.log("Inside removeData");
-  // console.log("baseData " +baseData.length);  // basedata is passed properly
-  // // console.log(data[0]);  // *** data is NOT passed properly***
-  // console.log("dataforCal " +dataforCal.length);  // dataforCal is passed properly
-  // console.log("TdataforCal " + TdataforCal.length);  // TdataforCal is passed properly
-  // console.log("HdataforCal " + HdataforCal.length);  // TdataforCal is passed properly
+  console.log("Inside removeData");
+  console.log("baseData " +baseData.length);  // basedata is passed properly
+  // console.log(data[0]);  // *** data is NOT passed properly***
+  console.log("dataforCal " +dataforCal.length);  // dataforCal is passed properly
+  console.log("TdataforCal " + TdataforCal.length);  // TdataforCal is passed properly
+  console.log("HdataforCal " + HdataforCal.length);  // TdataforCal is passed properly
 
   var thisRemovedData = baseData.filter(function(e) { return e.pid == data_id});
   baseData = baseData.filter(function(e) { return e.pid !== data_id});
-  console.log("doing removed_data");
-  // console.log(thisRemovedData);  // e.g [Array(1), Array(1)]  ****data in the first element***
-  // console.log(thisRemovedData[0].x);
+  console.log("removed_data");
+  console.log(thisRemovedData);  // e.g [Array(1), Array(1)]  data in the first element
+  console.log(thisRemovedData[0].x);
 
   removed_data_id.push(data_id);
   lastRemove.push(thisObject); // need to set "active" on undo
 
   thisRemovedData = thisRemovedData[0];
   console.log(thisRemovedData);  //e.g. Object {distance_km: 85, out_of_hospital_time_minute: 176, mode: "H", mode_long: "Helicopter", diagnostic_smur: "strokes"…}
-  // console.log(thisRemovedData.x, thisRemovedData.y,  thisRemovedData.pid);
+  console.log(thisRemovedData.x, thisRemovedData.y,  thisRemovedData.pid);
   removed_data.push(thisRemovedData);
 
   refreshShapes(); 
@@ -659,11 +580,3 @@ function undoLast() {
     alert("Sorry! No stored last removed datapoint");
   }
 } // END function undoLast()
-
-d3.selectAll('select').on('change',function(){
-  refreshShapes();
-});
-
-d3.selectAll('input').on('click', function(){
-  refreshShapes();
-})
